@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SamuraiApp.Domain;
-using System.Configuration;
 
 namespace SamuraiApp.Data
 {
@@ -12,7 +11,7 @@ namespace SamuraiApp.Data
 
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 		{
-			optionsBuilder.UseSqlServer(ConfigurationManager.ConnectionStrings["viDesktop.ConnectionString"].ToString());
+			optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=SamuraiAppData;Trusted_Connection=True;");
 		}
 	}
 }
