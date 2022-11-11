@@ -1,11 +1,18 @@
-﻿using System;
+﻿using SamuraiApp.Data;
+using SamuraiApp.Domain;
+using System;
+using System.Linq;
+using Microsoft.EntityFrameworkCore;
 
 namespace UI
 {
-	class Program
+	internal class Program
 	{
-		static void Main(string[] args)
+		private static SamuraiContext context = new SamuraiContext();
+
+		private static void Main(string[] args)
 		{
+			context.Database.EnsureCreated();
 			Console.WriteLine("Hello World!");
 		}
 	}
