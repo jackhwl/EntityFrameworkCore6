@@ -239,9 +239,9 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\20221109184845_initial.cs" />
-    <Compile Include="Migrations\20221109184845_initial.designer.cs">
-      <DependentUpon>20221109184845_initial.cs</DependentUpon>
+    <Compile Include="Migrations\20221112144244_initinal.cs" />
+    <Compile Include="Migrations\20221112144244_initinal.designer.cs">
+      <DependentUpon>20221112144244_initinal.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\SamuraiContextModelSnapshot.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
