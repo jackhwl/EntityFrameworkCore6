@@ -3,31 +3,20 @@ using SamuraiApp.Domain;
 
 namespace SamuraiApp.Data
 {
-    public class SamuraiContext:DbContext
-    {
-        //public SamuraiContext(DbContextOptions<SamuraiContext> options)
-        //    : base(options)
-        //{ }
-
-        public DbSet<Samurai> Samurais { get; set; }
-        public DbSet<Quote> Quotes { get; set; }
-        public DbSet<Battle> Battles { get; set; }
-
-		//protected override void OnModelCreating
-		//    (ModelBuilder modelBuilder)
-		//{
-		//    modelBuilder.Entity<SamuraiBattle>()
-		//        .HasKey(s => new
-		//        {
-		//            s.BattleId,
-		//            s.SamuraiId
-		//        });
-		//}
-
-		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+	public class SamuraiContext : DbContext
+	{
+		public SamuraiContext(DbContextOptions<SamuraiContext> options) : base(options)
 		{
-			optionsBuilder.UseSqlServer(
-				 "Server = (localdb)\\mssqllocaldb; Database = SamuraiAppData; Trusted_Connection = True; ");
+
 		}
+		public DbSet<Samurai> Samurais { get; set; }
+		public DbSet<Quote> Quotes { get; set; }
+		public DbSet<Battle> Battles { get; set; }
+
+		//protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+		//{
+		//	//ConfigurationManager.AppSettings["ConnectionString"]
+		//	optionsBuilder.UseSqlServer("Data Source=(localdb)\\mssqllocaldb; Initial Catalog=SamuraiAppData;Trusted_Connection=True;");
+		//}
 	}
 }
