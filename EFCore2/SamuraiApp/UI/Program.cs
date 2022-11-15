@@ -8,12 +8,19 @@ namespace UI
 {
 	internal class Program
 	{
-		private static SamuraiContext context = new SamuraiContext();
-
 		private static void Main(string[] args)
 		{
-			context.Database.EnsureCreated();
-			Console.WriteLine("Hello World!");
+			InsertSamurai();
+		}
+
+		private static void InsertSamurai()
+		{
+			var battle = new Battle { Name = "Jack Huang" };
+			using(var context = new SamuraiContext())
+			{
+				context.Battles.Add(battle);
+				context.SaveChanges();
+			}
 		}
 	}
 }

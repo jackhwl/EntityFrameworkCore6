@@ -7,7 +7,7 @@ namespace SamuraiApp.Data
 {
 	public class SamuraiContext:DbContext
 	{
-		public static readonly LoggerFactory loggerFactory = (LoggerFactory)LoggerFactory.Create(builder => builder.AddConsole());
+		//public static readonly LoggerFactory loggerFactory = (LoggerFactory)LoggerFactory.Create(builder => builder.AddConsole());
 
 		public DbSet<Samurai> Samurais { get; set; }
 		public DbSet<Quote> Quotes { get; set; }
@@ -17,7 +17,7 @@ namespace SamuraiApp.Data
 		{
 			//ConfigurationManager.AppSettings["ConnectionString"]
 			optionsBuilder
-				.UseLoggerFactory(loggerFactory)
+				//.UseLoggerFactory(loggerFactory)
 				.UseSqlServer("Data Source=(localdb)\\mssqllocaldb; Initial Catalog=SamuraiAppData;Trusted_Connection=True;");
 		}
 	}
