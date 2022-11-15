@@ -10,13 +10,23 @@ namespace UI
 	{
 		private static void Main(string[] args)
 		{
-			InsertSamurai();
+			InsertBattle();
+			//InsertMultipleBattles();
 		}
 
-		private static void InsertSamurai()
+		private static void InsertBattle()
 		{
 			var battle = new Battle { Name = "Jack Huang" };
 			using(var context = new SamuraiContext())
+			{
+				context.Battles.Add(battle);
+				context.SaveChanges();
+			}
+		}
+		private static void InsertMultipleBattles()
+		{
+			var battle = new Battle { Name = "Jack Huang" };
+			using (var context = new SamuraiContext())
 			{
 				context.Battles.Add(battle);
 				context.SaveChanges();
