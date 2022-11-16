@@ -8,13 +8,21 @@ namespace UI
 {
 	internal class Program
 	{
+		private static SamuraiContext _context = new SamuraiContext();
 		private static void Main(string[] args)
 		{
 			//InsertBattle();
 			//InsertSamurai();
 			//InsertMultipleBattles();
 			//InsertMultipleDifferentObjects();
-			SimpleSamuraiQuery();
+			//SimpleSamuraiQuery();
+			MoreQueries();
+		}
+
+		private static void MoreQueries()
+		{
+			var name = "Jack Huang 3";
+			var samurais = _context.Samurais.Where(s => s.Name == name).ToList();
 		}
 
 		private static void SimpleSamuraiQuery()
