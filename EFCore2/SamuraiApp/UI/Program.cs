@@ -20,7 +20,14 @@ namespace UI
 			//RetrieveAndUpdateSamurai();
 			RetrieveAndUpdateMultipleSamurais();
 		}
-
+		private static void DeleteUsingId(int samuraiId)
+		{
+			var samurai = _context.Samurais.Find(samuraiId);
+			_context.Remove(samurai);
+			_context.SaveChanges();
+			//alternate: call a stored procedure!
+			//_context.Database.ExecuteSqlCommand("exec DeletedById {0}", samuraiId);
+		}
 		private static void RetrieveAndUpdateMultipleSamurais()
 		{
 			var samurais = _context.Samurais.ToList();
