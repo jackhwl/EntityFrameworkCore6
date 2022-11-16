@@ -16,7 +16,23 @@ namespace UI
 			//InsertMultipleBattles();
 			//InsertMultipleDifferentObjects();
 			//SimpleSamuraiQuery();
-			MoreQueries();
+			//MoreQueries();
+			//RetrieveAndUpdateSamurai();
+			RetrieveAndUpdateMultipleSamurais();
+		}
+
+		private static void RetrieveAndUpdateMultipleSamurais()
+		{
+			var samurais = _context.Samurais.ToList();
+			samurais.ForEach(s => s.Name += "San");
+			_context.SaveChanges();
+		}
+
+		private static void RetrieveAndUpdateSamurai()
+		{
+			var samurai = _context.Samurais.FirstOrDefault();
+			samurai.Name += "San";
+			_context.SaveChanges();
 		}
 
 		private static void MoreQueries()
