@@ -14,6 +14,15 @@ namespace UI
 			//InsertSamurai();
 			//InsertMultipleBattles();
 			//InsertMultipleDifferentObjects();
+			SimpleSamuraiQuery();
+		}
+
+		private static void SimpleSamuraiQuery()
+		{
+			using (var context = new SamuraiContext())
+			{
+				var samurais = context.Samurais.ToList();
+			}
 		}
 
 		private static void InsertBattle()
@@ -46,11 +55,15 @@ namespace UI
 		}
 		private static void InsertMultipleDifferentObjects()
 		{
-			var samurai = new Samurai { Name = "Jack Huang 1" };
-			var battle2 = new Battle { Name = "Battle of Nagashino"};
+			
+			var battle2 = new Battle { Name = "Battle of Nagashino 4"};
+			
 			using (var context = new SamuraiContext())
 			{
-				context.AddRange(samurai, battle2);
+				context.Battles.AddRange(battle2);
+				context.SaveChanges();
+				var samurai = new Samurai { Name = "Jack Huang 4", BattleId = battle2.Id };
+				context.Samurais.AddRange(samurai);
 				context.SaveChanges();
 			}
 		}
