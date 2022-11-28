@@ -67,7 +67,7 @@ namespace UI
 		}
 		private static void InsertSamurai()
 		{
-			var samurai = new Samurai { Name = "Jack Huang 0", BattleId = 2 };
+			var samurai = new Samurai { Name = "Jack Huang 0" };
 			using (var context = new SamuraiContext())
 			{
 				context.Samurais.Add(samurai);
@@ -93,7 +93,7 @@ namespace UI
 			{
 				context.Battles.AddRange(battle2);
 				context.SaveChanges();
-				var samurai = new Samurai { Name = "Jack Huang 4", BattleId = battle2.Id };
+				var samurai = new Samurai { Name = "Jack Huang 4" };
 				context.Samurais.AddRange(samurai);
 				context.SaveChanges();
 			}
