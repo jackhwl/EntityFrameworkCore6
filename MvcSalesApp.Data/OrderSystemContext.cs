@@ -1,13 +1,9 @@
 ﻿using MvcSalesApp.Domain;
-using System;
-using System.Collections.Generic;
 using System.Data.Entity;
-using System.Linq;
-using System.Web;
 
 namespace MvcSalesApp.Data
 {
-    public class OrderSystemContext : DbContext
+	public class OrderSystemContext : DbContext
     {
         // You can add custom code to this file. Changes will not be overwritten.
         // 
@@ -20,6 +16,6 @@ namespace MvcSalesApp.Data
         {
         }
 
-		public System.Data.Entity.DbSet<Customer> Customers { get; set; }
+		public DbSet<Customer> Customers { get; set; }
 	}
 }
