@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace MvcSalesApp.Domain
+namespace SalesModel.DomainClasses
 {
   public class Category 
   {

@@ -1,4 +1,4 @@
-namespace MvcSalesApp.Domain.Enums
+namespace SalesModel.DomainClasses.Enums
 {
   public enum OrderSource
   {

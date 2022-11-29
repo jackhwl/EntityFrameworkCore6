@@ -1,5 +1,5 @@
 
-namespace MvcSalesApp.Domain
+namespace SalesModel.DomainClasses
 {
   public class ContactDetail
   {
