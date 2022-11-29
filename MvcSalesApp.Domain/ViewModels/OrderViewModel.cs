@@ -1,7 +1,7 @@
-﻿using SalesModel.DomainClasses.Enums;
+﻿using MvcSalesApp.Domain.Enums;
 using System;
 
-namespace SalesModel.DomainClasses
+namespace MvcSalesApp.Domain
 {
 	public class OrderViewModel
 	{

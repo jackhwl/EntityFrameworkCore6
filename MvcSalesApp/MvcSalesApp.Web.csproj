@@ -132,19 +132,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Address.cs" />
-    <Compile Include="Models\Category.cs" />
-    <Compile Include="Models\ContactDetail.cs" />
-    <Compile Include="Models\Customer.cs" />
-    <Compile Include="Models\Enums\AddressType.cs" />
-    <Compile Include="Models\Enums\OrderSource.cs" />
-    <Compile Include="Models\LineItem.cs" />
-    <Compile Include="Models\Order.cs" />
-    <Compile Include="Models\OrderSystemContext.cs" />
-    <Compile Include="Models\Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModels\CustomerViewModel.cs" />
-    <Compile Include="ViewModels\OrderViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -205,6 +193,16 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MvcSalesApp.Data\MvcSalesApp.Data.csproj">
+      <Project>{8E80183C-3A83-432A-AE36-31DAA4303925}</Project>
+      <Name>MvcSalesApp.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MvcSalesApp.Domain\MvcSalesApp.Domain.csproj">
+      <Project>{12618ff0-acdc-4acd-a553-d02af93e8314}</Project>
+      <Name>MvcSalesApp.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace SalesModel.DomainClasses
+namespace MvcSalesApp.Domain
 {
 	public class CustomerViewModel
 	{

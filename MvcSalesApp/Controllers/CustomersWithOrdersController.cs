@@ -1,15 +1,12 @@
-﻿using MvcSalesApp.Models;
-using SalesModel.DomainClasses;
-using System;
-using System.Collections.Generic;
+﻿using MvcSalesApp.Data;
+using MvcSalesApp.Domain;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 
-namespace MvcSalesApp.Controllers
+namespace MvcSalesApp.Web.Controllers
 {
-    public class CustomersWithOrdersController : Controller
+	public class CustomersWithOrdersController : Controller
     {
         private OrderSystemContext db = new OrderSystemContext();
 

@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.33027.164
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcSalesApp", "MvcSalesApp.csproj", "{854BCD6E-54A5-4323-8029-54AE03ED7CEC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcSalesApp.Web", "MvcSalesApp.Web.csproj", "{854BCD6E-54A5-4323-8029-54AE03ED7CEC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcSalesApp.Domain", "..\MvcSalesApp.Domain\MvcSalesApp.Domain.csproj", "{12618FF0-ACDC-4ACD-A553-D02AF93E8314}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcSalesApp.Data", "..\MvcSalesApp.Data\MvcSalesApp.Data.csproj", "{8E80183C-3A83-432A-AE36-31DAA4303925}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{854BCD6E-54A5-4323-8029-54AE03ED7CEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{854BCD6E-54A5-4323-8029-54AE03ED7CEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{854BCD6E-54A5-4323-8029-54AE03ED7CEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12618FF0-ACDC-4ACD-A553-D02AF93E8314}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12618FF0-ACDC-4ACD-A553-D02AF93E8314}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12618FF0-ACDC-4ACD-A553-D02AF93E8314}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12618FF0-ACDC-4ACD-A553-D02AF93E8314}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E80183C-3A83-432A-AE36-31DAA4303925}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E80183C-3A83-432A-AE36-31DAA4303925}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E80183C-3A83-432A-AE36-31DAA4303925}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E80183C-3A83-432A-AE36-31DAA4303925}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
