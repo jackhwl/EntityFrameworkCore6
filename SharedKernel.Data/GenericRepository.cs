@@ -22,6 +22,26 @@ namespace ReusableGenericRepository
             return _dbSet.AsNoTracking().ToList();
         }
 
+        public IEnumerable<TEntity> AllInclude(params Expression<Func<TEntity, object>>[] includeProperties)
+        {
+            return GetAllIncluding(includeProperties).ToList();
+        }
+
+        public IEnumerable<TEntity> FindByInclude(Expression<Func<TEntity, bool>> predicate, params Expression<Func<TEntity, object>>[] includeProperties)
+        {
+            var query = GetAllIncluding(includeProperties);
+            IEnumerable<TEntity> results = query.Where(predicate).ToList();
+            return results;
+        }
+
+        private IQueryable<TEntity> GetAllIncluding(params Expression<Func<TEntity, object>>[] includeProperties)
+        {
+            IQueryable<TEntity> queryable = _dbSet.AsNoTracking();
+
+            return includeProperties.Aggregate
+              (queryable, (current, includeProperty) => current.Include(includeProperty));
+        }
+
         public IEnumerable<TEntity> FindBy(Expression<Func<TEntity, bool>> predicate)
         {
             IEnumerable<TEntity> results = _dbSet.AsNoTracking()
