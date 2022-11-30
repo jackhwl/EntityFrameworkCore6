@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcSalesApp.Domain", "..\Mv
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcSalesApp.Data", "..\MvcSalesApp.Data\MvcSalesApp.Data.csproj", "{8E80183C-3A83-432A-AE36-31DAA4303925}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReusableGenericRepository", "..\ReusableGenericRepository\ReusableGenericRepository.csproj", "{396FF650-F1E4-42BA-B4B8-1FA6F8FC7138}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedKernel.Data", "..\SharedKernel.Data\SharedKernel.Data.csproj", "{396FF650-F1E4-42BA-B4B8-1FA6F8FC7138}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

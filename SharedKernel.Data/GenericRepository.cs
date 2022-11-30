@@ -6,7 +6,7 @@ using System.Linq.Expressions;
 
 namespace ReusableGenericRepository
 {
-    public class GenericRepository<TEntity> where TEntity : class
+    public class GenericRepository<TEntity> where TEntity : class//, IEntity
     {
         internal DbContext _context;
         internal DbSet<TEntity> _dbSet;
@@ -31,7 +31,10 @@ namespace ReusableGenericRepository
 
         public TEntity FindByKey(int id)
         {
-            return _dbSet.Find(id);
+            //return _dbSet.Find(id);
+            //return _dbSet.AsNoTracking().SingleOrDefault(e => e.Id);
+            Expression<Func<TEntity, bool>> lambda = Utilities.BuildLambdaForFindByKey<TEntity>(id);
+            return _dbSet.AsNoTracking().SingleOrDefault(lambda);
         }
 
         public void Insert(TEntity entity)
