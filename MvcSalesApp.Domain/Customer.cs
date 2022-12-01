@@ -41,5 +41,6 @@ namespace MvcSalesApp.Domain
         return LastName.Trim() + ", " + FirstName;
       }
     }
+    public string CustomerCookie { get; set; }
   }
 }

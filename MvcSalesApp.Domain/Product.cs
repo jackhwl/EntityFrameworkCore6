@@ -1,35 +1,27 @@
 using System;
-using System.Collections.Generic;
 
 namespace MvcSalesApp.Domain
 {
-  public class Product
-  {
-    private ICollection<Category> _categories;
-    private ICollection<LineItem> _lineItems;
-
-    public Product()
+    public class Product
     {
-      _lineItems = new HashSet<LineItem>();
-      _categories = new HashSet<Category>();
-    }
+        public Product()
+        {
+            IsAvailable = true;
+        }
 
-    public int ProductId { get; set; }
-    public string Description { get; set; }
-    public string Name { get; set; }
-    public DateTime ProductionStart { get; set; }
-    
+        public int ProductId { get; set; }
+        public string Description { get; set; }
+        public string Name { get; set; }
+        public DateTime ProductionStart { get; set; }
+        public bool IsAvailable { get; set; }
+        public int CategoryId { get; set; }
+        public Category Category { get; set; }
+        public int MaxQuantity { get; set; }
+        public decimal CurrentPrice { get; set; }
 
-    public ICollection<LineItem> LineItems
-    {
-      get { return _lineItems; }
-      set { _lineItems = value; }
+        public void RemoveFromProduction()
+        {
+            IsAvailable = false;
+        }
     }
-
-    public ICollection<Category> Categories
-    {
-      get { return _categories; }
-      set { _categories = value; }
-    }
-  }
 }
