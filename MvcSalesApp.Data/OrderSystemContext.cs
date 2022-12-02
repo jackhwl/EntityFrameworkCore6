@@ -36,5 +36,7 @@ namespace MvcSalesApp.Data
             }
 
         }
-    }
+
+		public System.Data.Entity.DbSet<MvcSalesApp.Domain.Category> Categories { get; set; }
+	}
 }

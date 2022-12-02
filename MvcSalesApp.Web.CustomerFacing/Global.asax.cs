@@ -1,7 +1,5 @@
+using MvcSalesApp.SharedKernel.Settings;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
@@ -9,7 +7,7 @@ using System.Web.Routing;
 
 namespace MvcSalesApp.Web.CustomerFacing
 {
-    public class MvcApplication : System.Web.HttpApplication
+	public class MvcApplication : System.Web.HttpApplication
     {
         protected void Application_Start()
         {
@@ -19,6 +17,7 @@ namespace MvcSalesApp.Web.CustomerFacing
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             UnityConfig.RegisterComponents();
+            ShoppingCartSettings.ShouldBeProtectedCookieExpirationSetter(TimeSpan.FromDays(7));
         }
     }
 }

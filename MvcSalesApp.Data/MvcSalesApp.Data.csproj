@@ -56,34 +56,6 @@
     <Compile Include="Migrations\201601041628039_initialcreate.Designer.cs">
       <DependentUpon>201601041628039_initialcreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201601041632100_AddProductIsAvailable.cs" />
-    <Compile Include="Migrations\201601041632100_AddProductIsAvailable.Designer.cs">
-      <DependentUpon>201601041632100_AddProductIsAvailable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201602021819062_custfromentity.cs" />
-    <Compile Include="Migrations\201602021819062_custfromentity.Designer.cs">
-      <DependentUpon>201602021819062_custfromentity.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201602111944547_shopping cart added.cs" />
-    <Compile Include="Migrations\201602111944547_shopping cart added.Designer.cs">
-      <DependentUpon>201602111944547_shopping cart added.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201602112217500_change sourceUri to string.cs" />
-    <Compile Include="Migrations\201602112217500_change sourceUri to string.Designer.cs">
-      <DependentUpon>201602112217500_change sourceUri to string.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201602112235465_Ignore RevisitedCart.cs" />
-    <Compile Include="Migrations\201602112235465_Ignore RevisitedCart.Designer.cs">
-      <DependentUpon>201602112235465_Ignore RevisitedCart.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201602241833439_ModifiedProductABit.cs" />
-    <Compile Include="Migrations\201602241833439_ModifiedProductABit.Designer.cs">
-      <DependentUpon>201602241833439_ModifiedProductABit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201602242235029_EvolvingCustomerAndCart.cs" />
-    <Compile Include="Migrations\201602242235029_EvolvingCustomerAndCart.Designer.cs">
-      <DependentUpon>201602242235029_EvolvingCustomerAndCart.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="OrderSystemContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -102,27 +74,6 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201601041628039_initialcreate.resx">
       <DependentUpon>201601041628039_initialcreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201601041632100_AddProductIsAvailable.resx">
-      <DependentUpon>201601041632100_AddProductIsAvailable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201602021819062_custfromentity.resx">
-      <DependentUpon>201602021819062_custfromentity.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201602111944547_shopping cart added.resx">
-      <DependentUpon>201602111944547_shopping cart added.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201602112217500_change sourceUri to string.resx">
-      <DependentUpon>201602112217500_change sourceUri to string.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201602112235465_Ignore RevisitedCart.resx">
-      <DependentUpon>201602112235465_Ignore RevisitedCart.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201602241833439_ModifiedProductABit.resx">
-      <DependentUpon>201602241833439_ModifiedProductABit.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201602242235029_EvolvingCustomerAndCart.resx">
-      <DependentUpon>201602242235029_EvolvingCustomerAndCart.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
