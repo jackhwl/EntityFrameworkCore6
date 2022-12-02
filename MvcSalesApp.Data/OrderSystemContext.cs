@@ -20,5 +20,21 @@ namespace MvcSalesApp.Data
         public DbSet<Product> Products { get; set; }
         public DbSet<NewCart> Carts { get; set; }
         public DbSet<CartItem> CartItems { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<NewCart>().HasKey(c => c.CartId);
+            modelBuilder.Ignore<RevisitedCart>();
+            base.OnModelCreating(modelBuilder);
+        }
+
+        public class OrderSystemContextConfig : DbConfiguration
+        {
+            public OrderSystemContextConfig()
+            {
+                this.SetDatabaseInitializer(new NullDatabaseInitializer<OrderSystemContext>());
+            }
+
+        }
     }
 }

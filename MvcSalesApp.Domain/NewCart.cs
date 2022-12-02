@@ -1,6 +1,7 @@
 ﻿using MvcSalesApp.SharedKernel.Settings;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace MvcSalesApp.Domain
 {

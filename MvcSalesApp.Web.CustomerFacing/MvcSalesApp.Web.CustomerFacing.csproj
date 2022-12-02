@@ -161,6 +161,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProductListController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -203,6 +204,7 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\ProductList\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -238,6 +240,10 @@
     <ProjectReference Include="..\MvcSalesApp.SharedKernel\MvcSalesApp.SharedKernel.csproj">
       <Project>{385e039d-09ae-4f31-a205-a1b632b149f4}</Project>
       <Name>MvcSalesApp.SharedKernel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ViewModels\MvcSalesApp.Web.CustomerFacing.ViewModels.csproj">
+      <Project>{507D5D8E-758B-4852-ADFE-AE46BBB35562}</Project>
+      <Name>MvcSalesApp.Web.CustomerFacing.ViewModels</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
