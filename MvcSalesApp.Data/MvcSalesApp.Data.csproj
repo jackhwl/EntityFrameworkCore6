@@ -1,6 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\MvcSalesApp\packages\EntityFramework.6.3.0\build\EntityFramework.props" Condition="Exists('..\MvcSalesApp\packages\EntityFramework.6.3.0\build\EntityFramework.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -35,10 +34,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\MvcSalesApp\packages\EntityFramework.6.3.0\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\MvcSalesApp\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\MvcSalesApp\packages\EntityFramework.6.3.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\MvcSalesApp\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -53,6 +52,39 @@
   <ItemGroup>
     <Compile Include="CustomerData.cs" />
     <Compile Include="CustomerWithOrdersData.cs" />
+    <Compile Include="Migrations\201601041628039_initialcreate.cs" />
+    <Compile Include="Migrations\201601041628039_initialcreate.Designer.cs">
+      <DependentUpon>201601041628039_initialcreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601041632100_AddProductIsAvailable.cs" />
+    <Compile Include="Migrations\201601041632100_AddProductIsAvailable.Designer.cs">
+      <DependentUpon>201601041632100_AddProductIsAvailable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602021819062_custfromentity.cs" />
+    <Compile Include="Migrations\201602021819062_custfromentity.Designer.cs">
+      <DependentUpon>201602021819062_custfromentity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602111944547_shopping cart added.cs" />
+    <Compile Include="Migrations\201602111944547_shopping cart added.Designer.cs">
+      <DependentUpon>201602111944547_shopping cart added.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602112217500_change sourceUri to string.cs" />
+    <Compile Include="Migrations\201602112217500_change sourceUri to string.Designer.cs">
+      <DependentUpon>201602112217500_change sourceUri to string.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602112235465_Ignore RevisitedCart.cs" />
+    <Compile Include="Migrations\201602112235465_Ignore RevisitedCart.Designer.cs">
+      <DependentUpon>201602112235465_Ignore RevisitedCart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602241833439_ModifiedProductABit.cs" />
+    <Compile Include="Migrations\201602241833439_ModifiedProductABit.Designer.cs">
+      <DependentUpon>201602241833439_ModifiedProductABit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602242235029_EvolvingCustomerAndCart.cs" />
+    <Compile Include="Migrations\201602242235029_EvolvingCustomerAndCart.Designer.cs">
+      <DependentUpon>201602242235029_EvolvingCustomerAndCart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="OrderSystemContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WebSiteOrderData.cs" />
@@ -67,13 +99,31 @@
       <Name>MvcSalesApp.Domain</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201601041628039_initialcreate.resx">
+      <DependentUpon>201601041628039_initialcreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601041632100_AddProductIsAvailable.resx">
+      <DependentUpon>201601041632100_AddProductIsAvailable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602021819062_custfromentity.resx">
+      <DependentUpon>201602021819062_custfromentity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602111944547_shopping cart added.resx">
+      <DependentUpon>201602111944547_shopping cart added.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602112217500_change sourceUri to string.resx">
+      <DependentUpon>201602112217500_change sourceUri to string.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602112235465_Ignore RevisitedCart.resx">
+      <DependentUpon>201602112235465_Ignore RevisitedCart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602241833439_ModifiedProductABit.resx">
+      <DependentUpon>201602241833439_ModifiedProductABit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602242235029_EvolvingCustomerAndCart.resx">
+      <DependentUpon>201602242235029_EvolvingCustomerAndCart.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\MvcSalesApp\packages\EntityFramework.6.3.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\MvcSalesApp\packages\EntityFramework.6.3.0\build\EntityFramework.props'))" />
-    <Error Condition="!Exists('..\MvcSalesApp\packages\EntityFramework.6.3.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\MvcSalesApp\packages\EntityFramework.6.3.0\build\EntityFramework.targets'))" />
-  </Target>
-  <Import Project="..\MvcSalesApp\packages\EntityFramework.6.3.0\build\EntityFramework.targets" Condition="Exists('..\MvcSalesApp\packages\EntityFramework.6.3.0\build\EntityFramework.targets')" />
 </Project>
