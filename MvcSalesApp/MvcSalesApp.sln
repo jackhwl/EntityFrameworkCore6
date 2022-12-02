@@ -15,6 +15,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcSalesApp.Services", "..\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcSalesApp.Web.CustomerFacing", "..\MvcSalesApp.Web.CustomerFacing\MvcSalesApp.Web.CustomerFacing.csproj", "{150EC661-4D11-45A8-81D1-3E144793B6AD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcSalesApp.Web.CustomerFacing.ViewModels", "..\ViewModels\MvcSalesApp.Web.CustomerFacing.ViewModels.csproj", "{507D5D8E-758B-4852-ADFE-AE46BBB35562}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcSalesApp.SharedKernel", "..\MvcSalesApp.SharedKernel\MvcSalesApp.SharedKernel.csproj", "{385E039D-09AE-4F31-A205-A1B632B149F4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +49,14 @@ Global
 		{150EC661-4D11-45A8-81D1-3E144793B6AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{150EC661-4D11-45A8-81D1-3E144793B6AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{150EC661-4D11-45A8-81D1-3E144793B6AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{507D5D8E-758B-4852-ADFE-AE46BBB35562}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{507D5D8E-758B-4852-ADFE-AE46BBB35562}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{507D5D8E-758B-4852-ADFE-AE46BBB35562}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{507D5D8E-758B-4852-ADFE-AE46BBB35562}.Release|Any CPU.Build.0 = Release|Any CPU
+		{385E039D-09AE-4F31-A205-A1B632B149F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{385E039D-09AE-4F31-A205-A1B632B149F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{385E039D-09AE-4F31-A205-A1B632B149F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{385E039D-09AE-4F31-A205-A1B632B149F4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

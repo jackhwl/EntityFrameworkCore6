@@ -1,5 +1,4 @@
-﻿//using MvcSalesApp.SharedKernel;
-//using MvcSalesApp.SharedKernel.Settings;
+﻿using MvcSalesApp.SharedKernel.Settings;
 using System;
 using System.Collections.Generic;
 

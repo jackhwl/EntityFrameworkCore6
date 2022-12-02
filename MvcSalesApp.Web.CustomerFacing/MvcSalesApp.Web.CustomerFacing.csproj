@@ -159,6 +159,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -174,6 +175,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Project_Readme.html" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
@@ -205,6 +207,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\Cart\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -218,6 +221,24 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MvcSalesApp.Data\MvcSalesApp.Data.csproj">
+      <Project>{8e80183c-3a83-432a-ae36-31daa4303925}</Project>
+      <Name>MvcSalesApp.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MvcSalesApp.Domain\MvcSalesApp.Domain.csproj">
+      <Project>{12618ff0-acdc-4acd-a553-d02af93e8314}</Project>
+      <Name>MvcSalesApp.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MvcSalesApp.Services\MvcSalesApp.Services.csproj">
+      <Project>{1F1A125B-4CAA-429B-BEA9-852A67437097}</Project>
+      <Name>MvcSalesApp.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MvcSalesApp.SharedKernel\MvcSalesApp.SharedKernel.csproj">
+      <Project>{385e039d-09ae-4f31-a205-a1b632b149f4}</Project>
+      <Name>MvcSalesApp.SharedKernel</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
