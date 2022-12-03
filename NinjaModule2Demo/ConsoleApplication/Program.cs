@@ -219,5 +219,15 @@ namespace ConsoleApplication
 				Console.WriteLine("Ninja Equipment Count: {0}", ninja.EquipmentOwned.Count());
 			}
 		}
+		private static void ProjectionQuery()
+		{
+			using (var context = new NinjaContext())
+			{
+				context.Database.Log = Console.WriteLine;
+				var ninja = context.Ninjas
+					.Select(n => new{ n.Name, n.DateOfBirth, n.EquipmentOwned })
+					.ToList();
+			}
+		}
 	}
 }
