@@ -60,5 +60,17 @@ namespace ConsoleApplication
 				context.SaveChanges();
 			}
 		}
+
+		private static void SimpleNinjaQueries()
+		{
+			using(var context = new NinjaContext())
+			{
+				var ninja = context.Ninjas.ToList();
+				var ninja1 = context.Ninjas.
+					Where(n => n.DateOfBirth>=new DateTime(1984,1,1))
+					.FirstOrDefault();
+				var ninja2 = context.Ninjas.
+					FirstOrDefault(n => n.DateOfBirth >= new DateTime(1984, 1, 1));
+			}
 	}
 }
