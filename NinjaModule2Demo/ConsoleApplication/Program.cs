@@ -127,5 +127,54 @@ namespace ConsoleApplication
 				}
 			}
 		}
+		private static void DeleteNinja()
+		{
+			using (var context = new NinjaContext())
+			{
+				context.Database.Log = Console.WriteLine;
+				var ninja = context.Ninjas.FirstOrDefault();
+				context.Ninjas.Remove(ninja);
+				context.SaveChanges();
+			}
+		}
+		private static void DeleteNinja1()
+		{
+			Ninja ninja;
+			using (var context = new NinjaContext())
+			{
+				context.Database.Log = Console.WriteLine;
+				 ninja = context.Ninjas.FirstOrDefault();
+				//context.Ninjas.Remove(ninjas);
+				//context.SaveChanges();
+			}
+			using (var context = new NinjaContext())
+			{
+				context.Database.Log = Console.WriteLine;
+				//context.Ninjas.Attach(ninja);
+				//context.Ninjas.Remove(ninja);
+				context.Entry(ninja).State = EntityState.Deleted;
+				context.SaveChanges();
+			}
+		}
+		private static void DeleteNinjaWithKeyValue()
+		{
+			var keyval = 1;
+			using (var context = new NinjaContext())
+			{
+				context.Database.Log = Console.WriteLine;
+				var ninja = context.Ninjas.Find(keyval);
+				context.Ninjas.Remove(ninja);
+				context.SaveChanges();
+			}
+		}
+		private static void DeleteNinjaViaStoredProcedure()
+		{
+			var keyval = 3;
+			using (var context = new NinjaContext())
+			{
+				context.Database.Log = Console.WriteLine;
+				context.Database.ExecuteSqlCommand("exec DeleteNinjaViaId {0}", keyval);
+			}
+		}
 	}
 }
