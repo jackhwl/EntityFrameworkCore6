@@ -72,5 +72,35 @@ namespace ConsoleApplication
 				var ninja2 = context.Ninjas.
 					FirstOrDefault(n => n.DateOfBirth >= new DateTime(1984, 1, 1));
 			}
+		}
+		private static void QueryAndUpdateNinja()
+		{
+			using (var context = new NinjaContext())
+			{
+				context.Database.Log = Console.WriteLine;
+				var ninja = context.Ninjas.FirstOrDefault();
+				ninja.ServedInOniwaban = (!ninja.ServedInOniwaban);
+				context.SaveChanges();
+			}
+		}
+		private static void QueryAndUpdateNinjaDisconnected()
+		{
+			Ninja ninja;
+			using (var context = new NinjaContext())
+			{
+				context.Database.Log = Console.WriteLine;
+				ninja = context.Ninjas.FirstOrDefault();
+			}
+
+			ninja.ServedInOniwaban = (!ninja.ServedInOniwaban);
+
+			using (var context = new NinjaContext())
+			{
+				context.Database.Log = Console.WriteLine;
+				context.Ninjas.Attach(ninja);
+				context.Entry(ninja).State =  EntityState.Modified;
+				context.SaveChanges();
+			}
+		}
 	}
 }
