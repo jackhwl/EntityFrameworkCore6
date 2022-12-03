@@ -52,6 +52,10 @@
     <Compile Include="Migrations\202212031820287_Initial.Designer.cs">
       <DependentUpon>202212031820287_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202212031832112_AddBirthdayToNinja.cs" />
+    <Compile Include="Migrations\202212031832112_AddBirthdayToNinja.Designer.cs">
+      <DependentUpon>202212031832112_AddBirthdayToNinja.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="NinjaContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -69,6 +73,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202212031820287_Initial.resx">
       <DependentUpon>202212031820287_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202212031832112_AddBirthdayToNinja.resx">
+      <DependentUpon>202212031832112_AddBirthdayToNinja.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
