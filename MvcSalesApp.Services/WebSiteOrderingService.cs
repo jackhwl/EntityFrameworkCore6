@@ -22,12 +22,12 @@ namespace MvcSalesApp.Services
             products.ForEach(p => lineitems.Add(new ProductLineItemViewModel
             {
                 ProductId = p.ProductId,
-                CategoryName = p.Category.Name,
+                //CategoryName = p.Category.Name,
                 Description = p.Description,
                 Name = p.Name,
                 Quantity = 0,
-                MaxQuantity = p.MaxQuantity,
-                CurrentUnitPrice = p.CurrentPrice
+                //MaxQuantity = p.MaxQuantity,
+                //CurrentUnitPrice = p.CurrentPrice
             }));
             return lineitems;
 

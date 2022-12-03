@@ -18,7 +18,7 @@ namespace MvcSalesApp.Data
         public List<Product> GetProductsWithCategoryForShopping()
         {
             return _context.Products.AsNoTracking()
-                .Include(p => p.Category).Where(p => p.IsAvailable)
+                //.Include(p => p.Category).Where(p => p.IsAvailable)
                 .ToList();
         }
 
