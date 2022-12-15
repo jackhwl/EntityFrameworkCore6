@@ -6,3 +6,5 @@
 * Using Migrations to Script or Directly Create the Database
 ** Script-Migration => generate script.sql
 ** Update-Database -Verbose
+* Reverse Engineering an Existing Database
+** scaffold-dbcontext -provider Microsoft.EntityFrameworkCore.SqlServer -connection "Data Source=(localdb)\\mssqllocaldb; Initial Catalog=SamuraiAppData31"
