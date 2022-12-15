@@ -14,5 +14,9 @@ namespace SamuraiApp.Data
 		{
 			optionsBuilder.UseSqlServer("Data Source=(localdb)\\mssqllocaldb; Initial Catalog=SamuraiAppData31;Trusted_Connection=True;");
 		}
+		protected override void OnModelCreating(ModelBuilder modelBuilder)
+		{
+			modelBuilder.Entity<SamuraiBattle>().HasKey(s => new { s.SamuraiId, s.BattleId });
+		}
 	}
 }
