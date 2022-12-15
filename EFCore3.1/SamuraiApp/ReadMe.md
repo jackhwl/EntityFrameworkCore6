@@ -13,3 +13,6 @@
 * Adding a One-to-One relationship
 * Visualizing How EF Core Sees Your Model
 * Controlling Table Names with Mappings
+* Running Migrations for the Model Changes
+** add-migration newrelationships
+** Update-Database
