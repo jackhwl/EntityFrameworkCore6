@@ -10,3 +10,4 @@
 ** scaffold-dbcontext -provider Microsoft.EntityFrameworkCore.SqlServer -connection "Data Source=(localdb)\\mssqllocaldb; Initial Catalog=SamuraiAppData31"
 ## Section 4: Mapping Many-to-Many and One-to-One Relationships
 * Setting up the many-to-many relationship
+* Adding a One-to-One relationship
