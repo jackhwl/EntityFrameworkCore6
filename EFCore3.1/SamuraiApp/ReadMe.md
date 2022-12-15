@@ -12,3 +12,4 @@
 * Setting up the many-to-many relationship
 * Adding a One-to-One relationship
 * Visualizing How EF Core Sees Your Model
+* Controlling Table Names with Mappings
