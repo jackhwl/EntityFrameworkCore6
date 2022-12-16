@@ -15,8 +15,8 @@ namespace ConsoleApp1
             //GetSamurais("Before Add:");
             //AddSamurai();
             //GetSamurais("After Add:");
-            //AddBattles();
-            QueryAndUpdateBattle_Disconnected();
+            AddBattles();
+            //QueryAndUpdateBattle_Disconnected();
             Console.Write("Press any key...");
             Console.ReadKey();
         }

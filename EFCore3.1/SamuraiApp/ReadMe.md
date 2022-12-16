@@ -18,3 +18,5 @@
 ** Update-Database
 ## Section 5: Interacting with Your EF Core Data Model
 * Adding Logging to EF Core's Workload
+* Persisting Data in Disconnected Scenarios
+* Enhancing Performance in Disconnected Apps with No-Tracking Settings
