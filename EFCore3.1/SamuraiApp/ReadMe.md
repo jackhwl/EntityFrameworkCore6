@@ -16,3 +16,5 @@
 * Running Migrations for the Model Changes
 ** add-migration newrelationships
 ** Update-Database
+## Section 5: Interacting with Your EF Core Data Model
+* Adding Logging to EF Core's Workload

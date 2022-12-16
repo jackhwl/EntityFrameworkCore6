@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using SamuraiApp.Domain;
 using System;
 
@@ -11,9 +12,21 @@ namespace SamuraiApp.Data
 		public DbSet<Clan> Clans { get; set; }
 		public DbSet<Battle> Battles { get; set; }
 
+		public static readonly ILoggerFactory ConsoleLoggerFactory = LoggerFactory.Create(builder =>
+		{
+			builder
+			.AddFilter((category, level) => 
+				category == DbLoggerCategory.Database.Command.Name 
+				&& level == LogLevel.Information)
+			.AddConsole();
+
+		});
+
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 		{
-			optionsBuilder.UseSqlServer("Data Source=(localdb)\\mssqllocaldb; Initial Catalog=SamuraiAppData31;Trusted_Connection=True;");
+			optionsBuilder
+				.UseLoggerFactory(ConsoleLoggerFactory).EnableSensitiveDataLogging()
+				.UseSqlServer("Data Source=(localdb)\\mssqllocaldb; Initial Catalog=SamuraiAppData31;Trusted_Connection=True;");
 		}
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
