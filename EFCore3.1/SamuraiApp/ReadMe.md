@@ -20,3 +20,5 @@
 * Adding Logging to EF Core's Workload
 * Persisting Data in Disconnected Scenarios
 * Enhancing Performance in Disconnected Apps with No-Tracking Settings
+## Section 6: Interacting with Related Data
+## Section 7: Working with Views and Stored Procedures and Raw SQL
