@@ -1,4 +1,5 @@
-﻿using SamuraiApp.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using SamuraiApp.Data;
 using SamuraiApp.Domain;
 using System;
 using System.Linq;
@@ -27,7 +28,7 @@ namespace ConsoleApp1
 
         private static void GetSamurais(string text)
         {
-            var samurais = context.Samurais.ToList();
+            var samurais = context.Samurais.Where(s => EF.Functions.Like(s.Name, "%abc%")).ToList();
             Console.WriteLine($"{text}: Samurai count is {samurais.Count}");
             foreach (var samurai in samurais)
             {
