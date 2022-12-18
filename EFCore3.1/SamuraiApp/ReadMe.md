@@ -24,3 +24,4 @@
 ## Section 7: Working with Views and Stored Procedures and Raw SQL
 ## Using EF Core with ASP.NET Core
 * Running the Controller to See the Output
+* Exploring and Debugging Insert, Update & Delete Controller Methods

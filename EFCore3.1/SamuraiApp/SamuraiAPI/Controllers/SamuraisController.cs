@@ -27,16 +27,12 @@ namespace SamuraiAPI.Controllers
             return await _context.Samurais.ToListAsync();
         }
 
-        // GET: Samurais/Details/5
-        public async Task<ActionResult<Samurai>> Details(int? id)
+		// GET: Samurais/Details/5
+		[HttpGet("{id}")]
+		public async Task<ActionResult<Samurai>> GetSamurai(int id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
+            var samurai = await _context.Samurais.FindAsync(id);
 
-            var samurai = await _context.Samurais
-                .FirstOrDefaultAsync(m => m.Id == id);
             if (samurai == null)
             {
                 return NotFound();
@@ -51,20 +47,16 @@ namespace SamuraiAPI.Controllers
             return null;
         }
 
-        // POST: Samurais/Create
+        // POST: api/Samurais
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<ActionResult<Samurai>> Create([Bind("Id,Name")] Samurai samurai)
+        public async Task<ActionResult<Samurai>> PostSamurai(Samurai samurai)
         {
-            if (ModelState.IsValid)
-            {
-                _context.Add(samurai);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            return samurai;
+            _context.Samurais.Add(samurai);
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction("GetSamurai", new { id = samurai.Id }, samurai);
         }
 
         // GET: Samurais/Edit/5
@@ -83,39 +75,35 @@ namespace SamuraiAPI.Controllers
             return samurai;
         }
 
-        // POST: Samurais/Edit/5
+        // PUT: api/Samurais/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<ActionResult<Samurai>> Edit(int id, [Bind("Id,Name")] Samurai samurai)
+        [HttpPut("{id}")]
+        public async Task<IActionResult> PutSamurai(int id, Samurai samurai)
         {
             if (id != samurai.Id)
             {
-                return NotFound();
+                return BadRequest();
             }
 
-            if (ModelState.IsValid)
+            _context.Entry(samurai).State = EntityState.Modified;
+
+            try
             {
-                try
-                {
-                    _context.Update(samurai);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!SamuraiExists(samurai.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
+                await _context.SaveChangesAsync();
             }
-            return samurai;
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!SamuraiExists(samurai.Id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+            return NoContent();
         }
 
         // GET: Samurais/Delete/5
@@ -136,18 +124,30 @@ namespace SamuraiAPI.Controllers
             return samurai;
         }
 
-        // POST: Samurais/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        // DELETE: api/Samurais/5
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<Samurai>> DeleteSamurai(int id)
         {
             var samurai = await _context.Samurais.FindAsync(id);
+            if (samurai == null)
+            {
+				return NotFound();
+			}
             _context.Samurais.Remove(samurai);
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
-        }
 
-        private bool SamuraiExists(int id)
+            return samurai;
+		}
+
+		[HttpDelete("sproc/{id}")]
+		public async Task<ActionResult<string>> DeleteQuotesForSamurai(int id)
+		{
+            var rowsAffected = await _context.Database.ExecuteSqlInterpolatedAsync($"EXEC DeleteQuotesForSamurai {id}");
+
+            return $"{rowsAffected} Quotes deleted";
+		}
+
+		private bool SamuraiExists(int id)
         {
             return _context.Samurais.Any(e => e.Id == id);
         }
