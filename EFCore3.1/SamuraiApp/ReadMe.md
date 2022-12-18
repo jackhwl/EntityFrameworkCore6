@@ -22,3 +22,5 @@
 * Enhancing Performance in Disconnected Apps with No-Tracking Settings
 ## Section 6: Interacting with Related Data
 ## Section 7: Working with Views and Stored Procedures and Raw SQL
+## Using EF Core with ASP.NET Core
+* Running the Controller to See the Output
