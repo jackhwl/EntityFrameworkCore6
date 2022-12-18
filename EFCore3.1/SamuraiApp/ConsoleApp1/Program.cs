@@ -8,7 +8,7 @@ namespace ConsoleApp1
 {
 	class Program
 	{
-        private static SamuraiContext context = new SamuraiContext();
+        private static SamuraiContext context; // = new SamuraiContext();
 
         private static void Main(string[] args)
         {
@@ -37,11 +37,11 @@ namespace ConsoleApp1
         {
             var battle = context.Battles.AsNoTracking().FirstOrDefault();
             battle.EndDate = new DateTime(1560, 6, 30);
-            using(var newContextInstance = new SamuraiContext())
-			{
-                newContextInstance.Battles.Update(battle);
-                newContextInstance.SaveChanges();
-			}
+   //         using(var newContextInstance = new SamuraiContext())
+			//{
+   //             newContextInstance.Battles.Update(battle);
+   //             newContextInstance.SaveChanges();
+			//}
         }
         private static void GetSamurais(string text)
         {

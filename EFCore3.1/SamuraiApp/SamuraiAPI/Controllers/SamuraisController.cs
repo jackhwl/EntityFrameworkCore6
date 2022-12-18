@@ -10,7 +10,9 @@ using SamuraiApp.Domain;
 
 namespace SamuraiAPI.Controllers
 {
-    public class SamuraisController : Controller
+    [Route("api/[controller]")]
+    [ApiController]
+    public class SamuraisController : ControllerBase
     {
         private readonly SamuraiContext _context;
 
@@ -20,13 +22,14 @@ namespace SamuraiAPI.Controllers
         }
 
         // GET: Samurais
-        public async Task<IActionResult> Index()
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<Samurai>>> GetSamurais()
         {
-            return View(await _context.Samurais.ToListAsync());
+            return await _context.Samurais.ToListAsync();
         }
 
         // GET: Samurais/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public async Task<ActionResult<Samurai>> Details(int? id)
         {
             if (id == null)
             {
@@ -40,13 +43,13 @@ namespace SamuraiAPI.Controllers
                 return NotFound();
             }
 
-            return View(samurai);
+            return samurai;
         }
 
         // GET: Samurais/Create
         public IActionResult Create()
         {
-            return View();
+            return null;
         }
 
         // POST: Samurais/Create
@@ -54,7 +57,7 @@ namespace SamuraiAPI.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name")] Samurai samurai)
+        public async Task<ActionResult<Samurai>> Create([Bind("Id,Name")] Samurai samurai)
         {
             if (ModelState.IsValid)
             {
@@ -62,11 +65,11 @@ namespace SamuraiAPI.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(samurai);
+            return samurai;
         }
 
         // GET: Samurais/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public async Task<ActionResult<Samurai>> Edit(int? id)
         {
             if (id == null)
             {
@@ -78,7 +81,7 @@ namespace SamuraiAPI.Controllers
             {
                 return NotFound();
             }
-            return View(samurai);
+            return samurai;
         }
 
         // POST: Samurais/Edit/5
@@ -86,7 +89,7 @@ namespace SamuraiAPI.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name")] Samurai samurai)
+        public async Task<ActionResult<Samurai>> Edit(int id, [Bind("Id,Name")] Samurai samurai)
         {
             if (id != samurai.Id)
             {
@@ -113,11 +116,11 @@ namespace SamuraiAPI.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(samurai);
+            return samurai;
         }
 
         // GET: Samurais/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        public async Task<ActionResult<Samurai>> Delete(int? id)
         {
             if (id == null)
             {
@@ -131,7 +134,7 @@ namespace SamuraiAPI.Controllers
                 return NotFound();
             }
 
-            return View(samurai);
+            return samurai;
         }
 
         // POST: Samurais/Delete/5
