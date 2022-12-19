@@ -11,10 +11,10 @@ namespace SamuraiApp.Data
 		{
 			ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;
 		}
-		//public SamuraiContext(DbContextOptions<SamuraiContext> options): base(options)
-		//{
-		//	ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;
-		//}
+		public SamuraiContext(DbContextOptions<SamuraiContext> options) : base(options)
+		{
+			ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;
+		}
 
 		public DbSet<Samurai> Samurais { get; set; }
 		public DbSet<Quote> Quotes { get; set; }
@@ -33,9 +33,12 @@ namespace SamuraiApp.Data
 
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 		{
-			optionsBuilder
-				//.UseLoggerFactory(ConsoleLoggerFactory).EnableSensitiveDataLogging()
-				.UseSqlServer("Data Source=(localdb)\\mssqllocaldb; Initial Catalog=SamuraiTestData31;Trusted_Connection=True;");
+			if (!optionsBuilder.IsConfigured)
+			{
+				optionsBuilder
+					//.UseLoggerFactory(ConsoleLoggerFactory).EnableSensitiveDataLogging()
+					.UseSqlServer("Data Source=(localdb)\\mssqllocaldb; Initial Catalog=SamuraiTestData31;Trusted_Connection=True;");
+			}
 		}
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
