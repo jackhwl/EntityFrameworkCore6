@@ -25,3 +25,5 @@
 ## Using EF Core with ASP.NET Core
 * Running the Controller to See the Output
 * Exploring and Debugging Insert, Update & Delete Controller Methods
+## Section 8: Testing with the InMemory Provider Instead of a Real Database
+* Creating Your First Test and Using it Against the Database
