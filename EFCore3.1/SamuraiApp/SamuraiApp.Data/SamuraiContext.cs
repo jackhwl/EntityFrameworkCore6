@@ -11,7 +11,7 @@ namespace SamuraiApp.Data
 		{
 			ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;
 		}
-		public SamuraiContext(DbContextOptions<SamuraiContext> options) : base(options)
+		public SamuraiContext(DbContextOptions options) : base(options)
 		{
 			ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;
 		}
