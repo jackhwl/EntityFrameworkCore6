@@ -15,13 +15,21 @@ namespace ConsoleApp1
             //GetSamurais("Before Add:");
             //AddSamurai();
             //GetSamurais("After Add:");
-            AddBattles();
+            //AddBattles();
             //QueryAndUpdateBattle_Disconnected();
+            InsertMultipleSamurais();
             Console.Write("Press any key...");
             Console.ReadKey();
         }
 
-        private static void AddSamurai()
+		private static void InsertMultipleSamurais()
+		{
+			var _bizdata = new BusinessDataLogic();
+            var samuraiNames = new string[] { "Sampson", "Tasha", "Number3", "Number4"};
+            var newSamuraisCreated = _bizdata.AddMultipleSamurais(samuraiNames);
+		}
+
+		private static void AddSamurai()
         {
             var samurai = new Samurai { Name = "Sampson" };
             context.Samurais.Add(samurai);
