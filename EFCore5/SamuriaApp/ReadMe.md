@@ -7,3 +7,10 @@
 * *	Add-Migration init
 * * Script-Migration
 * * Update-Database -verbose
+* Using Migrations to Script or Directly Create the Database
+* Reverse Engineering an Existing Database
+* * scaffold-dbcontext 
+## Section 4: Defining Relationships in Your Model
+* EF Core's Default Many-to-Many Mapping
+* * Add-Migration manytomanysimple
+* * Update-Database
