@@ -4,3 +4,6 @@
 * A Sneak Peek at Writing and Reading Data
 ## Section 3: Controlling Database Creation and Schema
 * Adding Your First Migration
+* *	Add-Migration init
+* * Script-Migration
+* * Update-Database -verbose
