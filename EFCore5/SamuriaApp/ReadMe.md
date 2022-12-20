@@ -14,5 +14,11 @@
 * EF Core's Default Many-to-Many Mapping
 * * Add-Migration manytomanysimple
 * * Update-Database
+* * Get-Migration
 * Storing Additional Data with Many-to-Many Payloads
 * Configuring the Many-to-Many Payload
+* Migrating the Many-to-Many Payload
+* * Table Mapping Conventions:
+1. DbSet drives table name
+2. If there is no DbSet, then table uses the name of the class
+3. Override with ToTable mapping
