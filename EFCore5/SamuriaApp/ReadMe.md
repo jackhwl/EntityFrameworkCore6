@@ -14,3 +14,5 @@
 * EF Core's Default Many-to-Many Mapping
 * * Add-Migration manytomanysimple
 * * Update-Database
+* Storing Additional Data with Many-to-Many Payloads
+* Configuring the Many-to-Many Payload
