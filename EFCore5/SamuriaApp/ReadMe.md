@@ -22,3 +22,4 @@
 1. DbSet drives table name
 2. If there is no DbSet, then table uses the name of the class
 3. Override with ToTable mapping
+* Adding a One-to-One Relationship
