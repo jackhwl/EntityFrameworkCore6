@@ -27,3 +27,6 @@
 * Looking at SQL Built by EF Core
 * Adding Logging to EF Core's Workload
 * Benefiting from Bulk Operations Support
+* Understanding the Query Workflow
+* Filtering in Queries
+* Aggregating in Queries
