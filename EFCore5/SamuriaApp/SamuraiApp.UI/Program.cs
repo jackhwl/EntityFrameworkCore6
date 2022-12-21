@@ -13,11 +13,11 @@ namespace SamuraiApp.UI
         private static void Main(string[] args)
         {
             //_context.Database.EnsureCreated();
-            AddSamurais("Julie", "Sampson");
-
-   //         GetSamurais("Before Add:");
-			//AddSamurai();
-			//GetSamurais("After Add:");
+            // AddSamurais("Julie", "Sampson");
+            GetSamurais();
+            //         GetSamurais("Before Add:");
+            //AddSamurai();
+            //GetSamurais("After Add:");
 
             Console.Write("Press any key...");
             Console.ReadKey();
@@ -38,12 +38,12 @@ namespace SamuraiApp.UI
             
             _context.SaveChanges();
         }
-        private static void GetSamurais(string text)
+        private static void GetSamurais()
         {
             var samurais = _context.Samurais
                 .TagWith("ConsoleApp.Program.GetSamurais method")
                 .ToList();
-            Console.WriteLine($"{text}: Samurai count is {samurais.Count}");
+            Console.WriteLine($"Samurai count is {samurais.Count}");
             foreach (var samurai in samurais)
             {
                 Console.WriteLine(samurai.Name);
