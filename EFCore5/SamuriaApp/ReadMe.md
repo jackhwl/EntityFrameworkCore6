@@ -23,3 +23,5 @@
 2. If there is no DbSet, then table uses the name of the class
 3. Override with ToTable mapping
 * Adding a One-to-One Relationship
+## Section 5: Interacting with Your EF Core Data Model
+* Looking at SQL Built by EF Core
