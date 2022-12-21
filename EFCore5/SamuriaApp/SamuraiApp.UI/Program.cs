@@ -13,8 +13,8 @@ namespace SamuraiApp.UI
         private static void Main(string[] args)
         {
             //_context.Database.EnsureCreated();
-            // AddSamurais("Julie", "Sampson");
-            GetSamurais();
+            AddSamuraisByName("Shimada", "Okamoto", "Kikuchio", "Hayashida");
+            // GetSamurais();
             //         GetSamurais("Before Add:");
             //AddSamurai();
             //GetSamurais("After Add:");
@@ -29,13 +29,28 @@ namespace SamuraiApp.UI
             _context.Samurais.Add(samurai);
             _context.SaveChanges();
         }
-        private static void AddSamurais(params string[] names)
+        private static void AddSamuraisByName(params string[] names)
         {
             foreach(string name in names)
 			{
                 _context.Samurais.Add(new Samurai { Name = name });
 			}
             
+            _context.SaveChanges();
+        }
+        private static void AddVariousTypes()
+		{
+            _context.AddRange(new Samurai { Name = "Shimada"},
+                new Samurai { Name = "Okamoto" },
+                new Battle { Name = "Battle of Anegawa" },
+                new Battle { Name = "Battle of Nagashino" }
+            );
+            //_context.Samurais.AddRange(new Samurai { Name = "Shimada" },
+            //    new Samurai { Name = "Okamoto" }
+            //    );
+            //_context.Battles.AddRange(new Battle { Name = "Battle of Anegawa" },
+            //    new Battle { Name = "Battle of Nagashino" }
+            //    );
             _context.SaveChanges();
         }
         private static void GetSamurais()

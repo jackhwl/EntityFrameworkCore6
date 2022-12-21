@@ -26,3 +26,4 @@
 ## Section 5: Interacting with Your EF Core Data Model
 * Looking at SQL Built by EF Core
 * Adding Logging to EF Core's Workload
+* Benefiting from Bulk Operations Support
