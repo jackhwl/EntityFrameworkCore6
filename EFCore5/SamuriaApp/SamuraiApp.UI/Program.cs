@@ -2,6 +2,7 @@
 using SamuraiApp.Data;
 using SamuraiApp.Domain;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace SamuraiApp.UI
@@ -14,17 +15,41 @@ namespace SamuraiApp.UI
         {
             //_context.Database.EnsureCreated();
             //AddSamuraisByName("Shimada", "Okamoto", "Kikuchio", "Hayashida");
-            AddVariousTypes();
+            //AddVariousTypes();
             // GetSamurais();
             //         GetSamurais("Before Add:");
             //AddSamurai();
             //GetSamurais("After Add:");
+            //InsertNewSamuraiWithAQuote();
+            Simple_AddQuoteToExistingSamuraiNotTracked(2);
 
             Console.Write("Press any key...");
             Console.ReadKey();
         }
 
-        private static void AddSamurai()
+		private static void Simple_AddQuoteToExistingSamuraiNotTracked(int samuraiId)
+		{
+			var quote = new Quote { Text = "Thanks for dinner!", SamuraiId = samuraiId};
+            using var newContext = new SamuraiContext();
+            newContext.Quotes.Add(quote);
+            newContext.SaveChanges();
+		}
+
+		private static void InsertNewSamuraiWithAQuote()
+		{
+			var samurai = new Samurai 
+            {
+                Name = "Kambei Shimada",
+                Quotes = new List<Quote>
+				{
+                    new Quote { Text = "I've come to save you"}
+				}
+			};
+            _context.Samurais.Add(samurai);
+            _context.SaveChanges();
+		}
+
+		private static void AddSamurai()
         {
             var samurai = new Samurai { Name = "Julie" };
             _context.Samurais.Add(samurai);

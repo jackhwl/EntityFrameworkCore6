@@ -39,3 +39,6 @@
 * Understanding Disconnected Scenarios 
 * Persisting Data in Disconnected Scenarios
 * Enhancing Performance in Disconnected Apps with No-Tracking Settings
+## Section 6: Interacting with Related Data
+* Insert Related Data
+
