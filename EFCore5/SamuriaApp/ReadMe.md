@@ -41,4 +41,7 @@
 * Enhancing Performance in Disconnected Apps with No-Tracking Settings
 ## Section 6: Interacting with Related Data
 * Insert Related Data
-
+* Eager Loading Related Data
+* Projecting Related Data in Queries
+* Loading Related Data for Objects Already in Memory
+* Using Related Data to Filter Objects

@@ -21,11 +21,19 @@ namespace SamuraiApp.UI
             //AddSamurai();
             //GetSamurais("After Add:");
             //InsertNewSamuraiWithAQuote();
-            Simple_AddQuoteToExistingSamuraiNotTracked(2);
+            //Simple_AddQuoteToExistingSamuraiNotTracked(2);
+            FilteringWithRelatedData();
 
             Console.Write("Press any key...");
             Console.ReadKey();
         }
+
+		private static void FilteringWithRelatedData()
+		{
+			var samurais = _context.Samurais
+                .Where(s => s.Quotes.Any(q => q.Text.Contains("dinner")))
+                .ToList();
+		}
 
 		private static void Simple_AddQuoteToExistingSamuraiNotTracked(int samuraiId)
 		{
