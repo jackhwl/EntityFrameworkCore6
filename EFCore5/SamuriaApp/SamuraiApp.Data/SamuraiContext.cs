@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-using SamuraiApp.Domain;
+using SamuraiApp.  Domain;
 using System;
 
 namespace SamuraiApp.Data

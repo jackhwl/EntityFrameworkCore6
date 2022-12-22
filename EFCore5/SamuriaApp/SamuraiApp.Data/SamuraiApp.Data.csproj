@@ -16,4 +16,6 @@
     <ProjectReference Include="..\SamuraiApp.Domain\SamuraiApp.Domain.csproj" />
   </ItemGroup>
 
+
+
 </Project>

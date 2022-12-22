@@ -30,3 +30,12 @@
 * Understanding the Query Workflow
 * Filtering in Queries
 * Aggregating in Queries
+* Updating Simple Objects
+* Deleting Simple Objects
+* * DbSet Add, AddRange, Update, UpdateRange, Remove, RemoveRange
+* * _context.Samurais.Add(samurai) _context.Samurais.AddRange(samuraiList)
+* * DbContext Add, AddRange, Update, UpdateRange, Remove, RemoveRange
+* * _context.Update(samurai) _context.UpdateRange(samurai, battle)
+* Understanding Disconnected Scenarios 
+* Persisting Data in Disconnected Scenarios
+* Enhancing Performance in Disconnected Apps with No-Tracking Settings

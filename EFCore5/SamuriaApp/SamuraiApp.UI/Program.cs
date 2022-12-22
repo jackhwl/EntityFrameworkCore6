@@ -13,7 +13,8 @@ namespace SamuraiApp.UI
         private static void Main(string[] args)
         {
             //_context.Database.EnsureCreated();
-            AddSamuraisByName("Shimada", "Okamoto", "Kikuchio", "Hayashida");
+            //AddSamuraisByName("Shimada", "Okamoto", "Kikuchio", "Hayashida");
+            AddVariousTypes();
             // GetSamurais();
             //         GetSamurais("Before Add:");
             //AddSamurai();
@@ -40,17 +41,17 @@ namespace SamuraiApp.UI
         }
         private static void AddVariousTypes()
 		{
-            _context.AddRange(new Samurai { Name = "Shimada"},
-                new Samurai { Name = "Okamoto" },
-                new Battle { Name = "Battle of Anegawa" },
-                new Battle { Name = "Battle of Nagashino" }
-            );
-            //_context.Samurais.AddRange(new Samurai { Name = "Shimada" },
-            //    new Samurai { Name = "Okamoto" }
-            //    );
-            //_context.Battles.AddRange(new Battle { Name = "Battle of Anegawa" },
-            //    new Battle { Name = "Battle of Nagashino" }
-            //    );
+			//_context.AddRange(new Samurai { Name = "Shimada"},
+			//    new Samurai { Name = "Okamoto" },
+			//    new Battle { Name = "Battle of Anegawa" },
+			//    new Battle { Name = "Battle of Nagashino" }
+			//);
+			//_context.Samurais.AddRange(new Samurai { Name = "Shimada" },
+			//    new Samurai { Name = "Okamoto" }
+			//    );
+			_context.Battles.AddRange(new Battle { Name = "Battle of Anegawa" },
+				new Battle { Name = "Battle of Nagashino" }
+				);
             _context.SaveChanges();
         }
         private static void GetSamurais()
