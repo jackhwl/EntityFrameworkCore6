@@ -45,3 +45,8 @@
 * Projecting Related Data in Queries
 * Loading Related Data for Objects Already in Memory
 * Using Related Data to Filter Objects
+* Modifying Related Data
+* Working with Many-to-Many Relationships
+* Altering or Removing Many-to-Many Joins
+## Section 7: Working with Views and Stored Procedures and Raw SQL
+* Adding Views and Other Database Objects Using Migrations
