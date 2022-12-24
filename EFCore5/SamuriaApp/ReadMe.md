@@ -51,3 +51,6 @@
 ## Section 7: Working with Views and Stored Procedures and Raw SQL
 * Adding Views and Other Database Objects Using Migrations
 * Querying the Database Views
+* Querying with Raw SQL
+* Running Stored Procedure Queries with Raw SQL
+* Executing Non-Query Raw SQL Commands
