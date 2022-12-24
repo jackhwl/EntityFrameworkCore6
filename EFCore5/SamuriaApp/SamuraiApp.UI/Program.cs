@@ -22,11 +22,18 @@ namespace SamuraiApp.UI
             //GetSamurais("After Add:");
             //InsertNewSamuraiWithAQuote();
             //Simple_AddQuoteToExistingSamuraiNotTracked(2);
-            FilteringWithRelatedData();
+            //FilteringWithRelatedData();
+            QuerySamuraiBattleStats();
 
             Console.Write("Press any key...");
             Console.ReadKey();
         }
+
+		private static void QuerySamuraiBattleStats()
+		{
+			var firststat = _context.SamuraiBattleStats.FirstOrDefault();
+            var sampsonState = _context.SamuraiBattleStats.FirstOrDefault(b => b.Name == "Sampson");
+		}
 
 		private static void FilteringWithRelatedData()
 		{

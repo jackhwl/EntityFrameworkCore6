@@ -50,3 +50,4 @@
 * Altering or Removing Many-to-Many Joins
 ## Section 7: Working with Views and Stored Procedures and Raw SQL
 * Adding Views and Other Database Objects Using Migrations
+* Querying the Database Views

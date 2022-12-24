@@ -10,6 +10,7 @@ namespace SamuraiApp.Data
 		public DbSet<Samurai> Samurais { get; set; }
 		public DbSet<Quote>	Quotes { get; set; }
 		public DbSet<Battle> Battles { get; set; }
+		public DbSet<SamuraiBattleStat> SamuraiBattleStats { get; set; }
 
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 		{
@@ -29,6 +30,9 @@ namespace SamuraiApp.Data
 				bs => bs.HasOne<Samurai>().WithMany())
 				.Property(bs => bs.DateJoined)
 				.HasDefaultValueSql("getdate()");
+
+			modelBuilder.Entity<Horse>().ToTable("Horses");
+			modelBuilder.Entity<SamuraiBattleStat>().HasNoKey().ToView("SamuraiBattleStats");
 		}
 	}
 }
