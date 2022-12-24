@@ -54,3 +54,5 @@
 * Querying with Raw SQL
 * Running Stored Procedure Queries with Raw SQL
 * Executing Non-Query Raw SQL Commands
+## Section 8: Using EF Core with ASP.NET Core
+* Adding the ASP.NET Core Project
