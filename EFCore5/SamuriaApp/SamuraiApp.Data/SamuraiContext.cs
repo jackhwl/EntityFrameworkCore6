@@ -1,25 +1,25 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
-using SamuraiApp.  Domain;
-using System;
+using SamuraiApp.Domain;
 
 namespace SamuraiApp.Data
 {
 	public class SamuraiContext: DbContext
 	{
+		public SamuraiContext(DbContextOptions<SamuraiContext> options) : base(options) { }
+
 		public DbSet<Samurai> Samurais { get; set; }
 		public DbSet<Quote>	Quotes { get; set; }
 		public DbSet<Battle> Battles { get; set; }
 		public DbSet<SamuraiBattleStat> SamuraiBattleStats { get; set; }
 
-		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-		{
-			optionsBuilder
-				.UseSqlServer("Data Source=(localdb)\\mssqllocaldb; Initial Catalog=SamuraiTestData5;Trusted_Connection=True;")
-				.LogTo(Console.WriteLine, new[] { DbLoggerCategory.Database.Command.Name }, LogLevel.Information)
-				.EnableSensitiveDataLogging()
-				;
-		}
+		//protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+		//{
+		//	optionsBuilder
+		//		.UseSqlServer("Data Source=(localdb)\\mssqllocaldb; Initial Catalog=SamuraiTestData5;Trusted_Connection=True;")
+		//		.LogTo(Console.WriteLine, new[] { DbLoggerCategory.Database.Command.Name }, LogLevel.Information)
+		//		.EnableSensitiveDataLogging()
+		//		;
+		//}
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{

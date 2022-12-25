@@ -56,3 +56,18 @@
 * Executing Non-Query Raw SQL Commands
 ## Section 8: Using EF Core with ASP.NET Core
 * Adding the ASP.NET Core Project
+* Adding a Samurai Controller to the Project
+* Wiring up the ASP.NET Core App with the DbContext
+* * Web API Project
+1. Add references to projects with entities and DbContext
+2. Build
+3. Add controller (EF & API actions) (Adds EF Core & other packages to csproj)
+* * Startup
+4. Add services.DbContext with UseSqlServer to startup Configure()
+* * appsettings.json
+5. Add connection string config
+6. Add EF Core logging config
+* * DbContext
+7. Add constructor that takes in DbContextOptions
+8. Remove optionsBuilder from
+9. Clean up using statements
