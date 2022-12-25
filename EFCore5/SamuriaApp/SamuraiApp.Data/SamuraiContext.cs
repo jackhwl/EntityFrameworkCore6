@@ -5,6 +5,10 @@ namespace SamuraiApp.Data
 {
 	public class SamuraiContext: DbContext
 	{
+		public SamuraiContext()
+		{
+
+		}
 		public SamuraiContext(DbContextOptions<SamuraiContext> options) : base(options) { }
 
 		public DbSet<Samurai> Samurais { get; set; }

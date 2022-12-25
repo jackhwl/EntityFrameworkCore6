@@ -71,3 +71,4 @@
 7. Add constructor that takes in DbContextOptions
 8. Remove optionsBuilder from
 9. Clean up using statements
+* Running the Controller to See Output
