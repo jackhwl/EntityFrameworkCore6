@@ -76,3 +76,4 @@
 * EF Core 5 in Blazor Apps
 ## Section 9: Automated Testing with EF Core
 * Creating Your First Test and Using It Against the Database
+* Writing Your First Test with the InMemory Provider
