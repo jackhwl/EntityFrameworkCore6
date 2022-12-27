@@ -72,3 +72,7 @@
 8. Remove optionsBuilder from
 9. Clean up using statements
 * Running the Controller to See Output
+* Exploring and Debugging Insert, Update & Delete Controller Methods
+* EF Core 5 in Blazor Apps
+## Section 9: Automated Testing with EF Core
+* Creating Your First Test and Using It Against the Database

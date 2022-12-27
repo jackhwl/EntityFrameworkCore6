@@ -13,6 +13,7 @@ namespace SamuraiApp.UI
 
         private static void Main(string[] args)
         {
+
             //_context.Database.EnsureCreated();
             //AddSamuraisByName("Shimada", "Okamoto", "Kikuchio", "Hayashida");
             //AddVariousTypes();
