@@ -2,3 +2,4 @@
 * Creating a DataProject with EF Core 6 Packages
 * Creating Data Model with EF Core
 * Specifying the Data Provider and Connection String
+* Reading and Writing Some Data
