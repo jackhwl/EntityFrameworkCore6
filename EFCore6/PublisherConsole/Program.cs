@@ -2,17 +2,21 @@
 using PublisherData;
 using PublisherDomain;
 
-using (PubContext context = new PubContext())
-{
-    context.Database.EnsureCreated();
-}
+PubContext _context = new PubContext();
+//using (PubContext context = new PubContext())
+//{
+//    context.Database.EnsureCreated();
+//}
 
 //GetAuthors();
 //AddAuthor();
 //GetAuthors();
 
-AddAuthorWithBook();
-GetAuthorsWithBooks();
+//AddAuthorWithBook();
+//GetAuthorsWithBooks();
+
+//AddSomeMoreAuthors();
+SkipAndTakeAuthors();
 
 void AddAuthorWithBook()
 {
@@ -48,7 +52,28 @@ void AddAuthor()
     context.SaveChanges();
 }
 
+void AddSomeMoreAuthors()
+{
+    _context.Authors.Add(new Author { FirstName = "Rhoda", LastName = "Lerman"});
+    _context.Authors.Add(new Author { FirstName = "Don", LastName = "Jones" });
+    _context.Authors.Add(new Author { FirstName = "Jim", LastName = "Christopher" });
+    _context.Authors.Add(new Author { FirstName = "Stephen", LastName = "Haunts" });
+    _context.SaveChanges();
+}
 
+void SkipAndTakeAuthors()
+{
+    var groupSize = 2;
+    for(int i=0; i < 5; i++)
+    {
+        var authors = _context.Authors.Skip(groupSize * i).Take(groupSize).ToList();
+        Console.WriteLine($"Group {i}:");
+        foreach(var author in authors)
+        {
+            Console.WriteLine($" {author.FirstName} {author.LastName}");
+        }
+    }
+}
 
 void GetAuthors()
 {
