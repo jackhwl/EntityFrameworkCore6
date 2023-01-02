@@ -12,3 +12,4 @@
 * Inspecting Your First Migration
 * Add-Migration, Script-Migration, Update-Database
 * Using Migrations to Script or Directly Create the Database
+* Seeding a Database via Migrations
