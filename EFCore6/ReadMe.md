@@ -10,3 +10,5 @@
 # Section 4: Tracking and Saving Data with EF Core
 # Section 5: Controlling Database Creation and Schema with Migrations
 * Inspecting Your First Migration
+* Add-Migration, Script-Migration, Update-Database
+* Using Migrations to Script or Directly Create the Database
