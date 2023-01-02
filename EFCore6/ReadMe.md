@@ -7,3 +7,6 @@
 # Section 3: Using EF Core 6 to Query a Database
 * Querying Basics
 * Benefiting From Additional Filtering Features
+# Section 4: Tracking and Saving Data with EF Core
+# Section 5: Controlling Database Creation and Schema with Migrations
+* Inspecting Your First Migration

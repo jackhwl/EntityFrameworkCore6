@@ -28,8 +28,6 @@ void AddAuthorWithBook()
     context.SaveChanges();
 }
 
-
-
 void GetAuthorsWithBooks()
 {
     using var context = new PubContext();
@@ -48,7 +46,7 @@ void AddAuthor()
 {
     var author = new Author { FirstName = "Josie", LastName="Newf"};
     using var context = new PubContext();
-    context.Authors.Add(author);
+    context.Authors.Add(author); 
     context.SaveChanges();
 }
 
@@ -74,7 +72,10 @@ void SkipAndTakeAuthors()
         }
     }
 }
-
+void QueryAggregate()
+{
+    var author = _context.Authors.First(a => a.LastName == "Lerman");
+}
 void GetAuthors()
 {
     using var context = new PubContext();
