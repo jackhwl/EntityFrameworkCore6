@@ -33,6 +33,12 @@ namespace PublisherData
                 new Book { AuthorId = 3,BookId = 3, Title="The Left Hand of Darkness", PublishDate=new DateTime(1989,3,1)}
             };
             modelBuilder.Entity<Book>().HasData(someBooks);
+
+            ////example of mapping an unconventional FK since I have the author prop in books, I am using it in WithOne:
+            //modelBuilder.Entity<Author>()
+            //    .HasMany(a => a.Books)
+            //    .WithOne(a => a.Author)
+            //    .HasForeignKey(a => a.AuthorFK);
         }
     }
 }

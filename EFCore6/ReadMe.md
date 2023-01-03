@@ -19,3 +19,5 @@
 * Visualizing EF Core's Interpretation of Your Data Model
 * Interpreting One-to-Many Relationships
 * Benefitting from Foreign Key Properties
+* Mapping Unconventional Foreign Keys
+* Understanding Nullability and Required vs. Optional Principals
