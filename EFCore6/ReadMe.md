@@ -8,9 +8,14 @@
 * Querying Basics
 * Benefiting From Additional Filtering Features
 # Section 4: Tracking and Saving Data with EF Core
+
 # Section 5: Controlling Database Creation and Schema with Migrations
 * Inspecting Your First Migration
 * Add-Migration, Script-Migration, Update-Database
 * Using Migrations to Script or Directly Create the Database
 * Seeding a Database via Migrations
 * Reverse Engineering an Existing Database
+# Section 6: Defining One-to-Many Relationships
+* Visualizing EF Core's Interpretation of Your Data Model
+* Interpreting One-to-Many Relationships
+* Benefitting from Foreign Key Properties
