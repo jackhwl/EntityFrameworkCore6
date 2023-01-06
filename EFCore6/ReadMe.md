@@ -21,3 +21,5 @@
 * Benefitting from Foreign Key Properties
 * Mapping Unconventional Foreign Keys
 * Understanding Nullability and Required vs. Optional Principals
+# Section 7: Logging EF Core Activity and SQL
+* Adding Logging to EF Core's Workflow
