@@ -23,3 +23,4 @@
 * Understanding Nullability and Required vs. Optional Principals
 # Section 7: Logging EF Core Activity and SQL
 * Adding Logging to EF Core's Workflow
+* Filtering Log Output with EF Core Message Categories and LogLevel
