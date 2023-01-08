@@ -16,7 +16,21 @@ PubContext _context = new PubContext();
 //GetAuthorsWithBooks();
 
 //AddSomeMoreAuthors();
-SkipAndTakeAuthors();
+//SkipAndTakeAuthors();
+
+InsertNewAuthorWithNewBook();
+
+void InsertNewAuthorWithNewBook()
+{
+    var author = new Author { FirstName = "Lynda", LastName = "Rutledge" };
+    author.Books.Add(new Book
+    {
+        Title = "West With Giraffes",
+        PublishDate = new DateTime(2021, 2, 1)
+    });
+    _context.Authors.Add(author);
+    _context.SaveChanges();
+}
 
 void AddAuthorWithBook()
 {

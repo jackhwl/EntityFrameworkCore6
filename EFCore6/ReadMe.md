@@ -25,3 +25,5 @@
 * Adding Logging to EF Core's Workflow
 * Filtering Log Output with EF Core Message Categories and LogLevel
 * Additional Filtering Capabilities 
+# Section 8: Interacting with Related Data
+* Adding Related Data
