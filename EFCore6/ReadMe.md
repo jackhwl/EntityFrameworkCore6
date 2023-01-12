@@ -27,3 +27,5 @@
 * Additional Filtering Capabilities 
 # Section 8: Interacting with Related Data
 * Adding Related Data
+# Section 9: Defining and Using Many-to-Many Relationships
+* Understanding and Creating Skip Navigations
