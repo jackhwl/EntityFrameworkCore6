@@ -29,3 +29,4 @@
 * Adding Related Data
 # Section 9: Defining and Using Many-to-Many Relationships
 * Understanding and Creating Skip Navigations
+* Joining Objects in New Many-to-Many Relationships

@@ -18,7 +18,39 @@ PubContext _context = new PubContext();
 //AddSomeMoreAuthors();
 //SkipAndTakeAuthors();
 
-InsertNewAuthorWithNewBook();
+//InsertNewAuthorWithNewBook();
+
+//ConnectExistingArtistAndCoverObjects();
+//CreateNewCoverWithExistingArtist();
+CreateNewCoverAndArtistTogether();
+
+void CreateNewCoverAndArtistTogether()
+{
+    var newArtist = new Artist { FirstName = "Kir", LastName = "Talmage"};
+    var newCover = new Cover { DesignIdeas = "We like birds!" };
+    newArtist.Covers.Add(newCover);
+    _context.Artists.Add(newArtist);
+    _context.SaveChanges();
+}
+
+void CreateNewCoverWithExistingArtist()
+{
+    var artistA = _context.Artists.Find(1);
+    var cover = new Cover { DesignIdeas = "Author has provided a photo"};
+    cover.Artists.Add(artistA);
+    _context.Covers.Add(cover);
+    _context.SaveChanges();
+}
+
+void ConnectExistingArtistAndCoverObjects()
+{
+    var artistA = _context.Artists.Find(1);
+    var artistB = _context.Artists.Find(2);
+    var coverA = _context.Covers.Find(1);
+    coverA.Artists.Add(artistA);
+    coverA.Artists.Add(artistB);
+    _context.SaveChanges();
+}
 
 void InsertNewAuthorWithNewBook()
 {
