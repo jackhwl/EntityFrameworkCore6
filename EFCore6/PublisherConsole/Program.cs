@@ -22,7 +22,32 @@ PubContext _context = new PubContext();
 
 //ConnectExistingArtistAndCoverObjects();
 //CreateNewCoverWithExistingArtist();
-CreateNewCoverAndArtistTogether();
+//CreateNewCoverAndArtistTogether();
+
+//RetrieveAnArtistWithTheirCovers();
+//RetrieveACoverWithItsArtists();
+//RetrieveAllArtistsWithTheirCovers();
+RetrieveAllArtistsWhoHaveCovers();
+void RetrieveAllArtistsWhoHaveCovers()
+{
+    var artistsWithCovers = _context.Artists.Where(a => a.Covers.Any()).ToList();
+}
+
+void RetrieveAllArtistsWithTheirCovers()
+{
+    var artistsWithCovers = _context.Artists.Include(a => a.Covers).ToList();
+}
+
+void RetrieveACoverWithItsArtists()
+{
+    var coverWithArtists = _context.Covers.Include(c => c.Artists)
+                            .FirstOrDefault(c => c.CoverId == 1);
+}
+void RetrieveAnArtistWithTheirCovers()
+{
+    var artistWithCovers = _context.Artists.Include(a => a.Covers)
+                            .FirstOrDefault(a => a.ArtistId == 1);
+}
 
 void CreateNewCoverAndArtistTogether()
 {
