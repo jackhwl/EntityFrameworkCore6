@@ -31,3 +31,5 @@
 * Understanding and Creating Skip Navigations
 * Joining Objects in New Many-to-Many Relationships
 * Querying Across Many-to-Many Relationships
+# Section 10: Defining and Using One-to-One Relationships
+* Updating the Model and Database with the New Relationship
