@@ -33,3 +33,6 @@
 * Querying Across Many-to-Many Relationships
 # Section 10: Defining and Using One-to-One Relationships
 * Updating the Model and Database with the New Relationship
+# Section 11: Working with Views and Stored Procedures and Raw SQL
+* Querying with Raw SQL
+* .FromSqlRaw() .FromSqlInterpolated()
