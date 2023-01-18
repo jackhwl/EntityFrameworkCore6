@@ -29,8 +29,13 @@ PubContext _context = new PubContext();
 //RetrieveAllArtistsWithTheirCovers();
 //RetrieveAllArtistsWhoHaveCovers();
 
-RawSqlStoredProc();
-InterpolatedSqlStoredProc();
+//RawSqlStoredProc();
+//InterpolatedSqlStoredProc();
+GetAuthorsByArtist();
+void GetAuthorsByArtist()
+{
+    var authorartists = _context.AuthorsByArtist.ToList();
+}
 void RawSqlStoredProc()
 {
     var authors = _context.Authors

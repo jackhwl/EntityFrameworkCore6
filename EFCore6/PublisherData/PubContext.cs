@@ -21,6 +21,8 @@ namespace PublisherData
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<AuthorByArtist>().HasNoKey().ToView(nameof(AuthorsByArtist));
+
             modelBuilder.Entity<Author>().HasData(new Author { AuthorId= 1, FirstName="Rhoda", LastName = "Lerman" });
             var authorList = new Author[]
             {

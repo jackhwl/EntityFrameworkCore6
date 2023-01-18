@@ -38,3 +38,4 @@
 * .FromSqlRaw() .FromSqlInterpolated()
 * Adding Stored Procedures and Other Database Objects Using Migrations
 * Running Stored Procedure Queries with Raw SQL
+* Using Keyless Entities to Map to Views
