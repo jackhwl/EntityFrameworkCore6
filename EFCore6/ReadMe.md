@@ -37,3 +37,4 @@
 * Querying with Raw SQL
 * .FromSqlRaw() .FromSqlInterpolated()
 * Adding Stored Procedures and Other Database Objects Using Migrations
+* Running Stored Procedure Queries with Raw SQL

@@ -27,7 +27,27 @@ PubContext _context = new PubContext();
 //RetrieveAnArtistWithTheirCovers();
 //RetrieveACoverWithItsArtists();
 //RetrieveAllArtistsWithTheirCovers();
-RetrieveAllArtistsWhoHaveCovers();
+//RetrieveAllArtistsWhoHaveCovers();
+
+RawSqlStoredProc();
+InterpolatedSqlStoredProc();
+void RawSqlStoredProc()
+{
+    var authors = _context.Authors
+        .FromSqlRaw("AuthorsPublishedinYearRange {0}, {1}", 2010, 2015)
+        .ToList();
+}
+
+
+void InterpolatedSqlStoredProc()
+{
+    int start = 2010;
+    int end = 2015;
+    var authors = _context.Authors
+    .FromSqlInterpolated($"AuthorsPublishedinYearRange {start}, {end}")
+    .ToList();
+}
+
 void RetrieveAllArtistsWhoHaveCovers()
 {
     var artistsWithCovers = _context.Artists.Where(a => a.Covers.Any()).ToList();
