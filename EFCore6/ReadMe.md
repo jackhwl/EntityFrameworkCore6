@@ -36,3 +36,4 @@
 # Section 11: Working with Views and Stored Procedures and Raw SQL
 * Querying with Raw SQL
 * .FromSqlRaw() .FromSqlInterpolated()
+* Adding Stored Procedures and Other Database Objects Using Migrations
