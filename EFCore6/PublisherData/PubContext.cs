@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
 using PublisherDomain;
 
 namespace PublisherData
@@ -12,12 +11,22 @@ namespace PublisherData
         public DbSet<Cover> Covers { get; set; }
         public DbSet<AuthorByArtist> AuthorsByArtist { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        public PubContext()
         {
-            optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb; Database=Publisher6;Trusted_Connection=True;")
-                .LogTo(Console.WriteLine, new[] {DbLoggerCategory.Database.Command.Name }, LogLevel.Information)
-                .EnableSensitiveDataLogging();
+
         }
+        public PubContext(DbContextOptions<PubContext> options) : base(options)
+        {
+
+        }
+
+        // remove after setup dbconnection in api
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb; Database=Publisher6;Trusted_Connection=True;")
+        //        .LogTo(Console.WriteLine, new[] {DbLoggerCategory.Database.Command.Name }, LogLevel.Information)
+        //        .EnableSensitiveDataLogging();
+        //}
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
