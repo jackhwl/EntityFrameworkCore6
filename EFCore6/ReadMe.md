@@ -39,3 +39,5 @@
 * Adding Stored Procedures and Other Database Objects Using Migrations
 * Running Stored Procedure Queries with Raw SQL
 * Using Keyless Entities to Map to Views
+# Section 12: Using EF Core with ASP.NET Core Apps
+* Adding the ASP.NET Core Project
