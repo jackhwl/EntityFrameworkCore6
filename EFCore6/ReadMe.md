@@ -46,3 +46,4 @@
 * Running the Controller to See the Output and Logs
 * Refactoring the Controller to Align with Common Practices
 * Exploring and Debuging Insert, Update & Delete Controller Methods
+* Using Raw SQL for Controller Methods

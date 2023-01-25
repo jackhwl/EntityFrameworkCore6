@@ -115,15 +115,21 @@ namespace PubAPI.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteAuthor(int id)
         {
-            var author = await _context.Authors.FindAsync(id);
-            if (author == null)
+            //var author = await _context.Authors.FindAsync(id);
+            //if (author == null)
+            //{
+            //    return NotFound();
+            //}
+
+            //_context.Authors.Remove(author);
+            //await _context.SaveChangesAsync();
+
+            var reccount = await _context.Database
+                .ExecuteSqlInterpolatedAsync($"Delete from authors where authorid={id}");
+            if (reccount == 0)
             {
                 return NotFound();
             }
-
-            _context.Authors.Remove(author);
-            await _context.SaveChangesAsync();
-
             return NoContent();
         }
 
