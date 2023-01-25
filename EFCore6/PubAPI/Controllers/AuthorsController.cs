@@ -42,6 +42,23 @@ namespace PubAPI.Controllers
 
             return AuthorToDTO(author);
         }
+        [HttpPost]
+        public async Task<ActionResult<AuthorDTO>> PostAuthor(AuthorDTO authorDTO)
+        {
+            var author = AuthorFromDTO(authorDTO);
+            _context.Authors.Add(author);
+            await _context.SaveChangesAsync();
+            return CreatedAtAction("GetAuthor", new { id = author.AuthorId }, AuthorToDTO(author));
+        }
+        private static Author AuthorFromDTO(AuthorDTO authorDTO)
+        {
+            return new Author
+            {
+                AuthorId = authorDTO.AuthorId,
+                FirstName = authorDTO.FirstName,
+                LastName = authorDTO.LastName
+            };
+        }
         private static AuthorDTO AuthorToDTO(Author author)
         {
             return new AuthorDTO
@@ -54,13 +71,14 @@ namespace PubAPI.Controllers
         // PUT: api/Authors/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutAuthor(int id, Author author)
+        public async Task<IActionResult> PutAuthor(int id, AuthorDTO authorDTO)
         {
-            if (id != author.AuthorId)
+            if (id != authorDTO.AuthorId)
             {
                 return BadRequest();
             }
 
+            Author author = AuthorFromDTO(authorDTO);
             _context.Entry(author).State = EntityState.Modified;
 
             try
@@ -84,14 +102,14 @@ namespace PubAPI.Controllers
 
         // POST: api/Authors
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPost]
-        public async Task<ActionResult<Author>> PostAuthor(Author author)
-        {
-            _context.Authors.Add(author);
-            await _context.SaveChangesAsync();
+        //[HttpPost]
+        //public async Task<ActionResult<Author>> PostAuthor(Author author)
+        //{
+        //    _context.Authors.Add(author);
+        //    await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetAuthor", new { id = author.AuthorId }, author);
-        }
+        //    return CreatedAtAction("GetAuthor", new { id = author.AuthorId }, author);
+        //}
 
         // DELETE: api/Authors/5
         [HttpDelete("{id}")]
