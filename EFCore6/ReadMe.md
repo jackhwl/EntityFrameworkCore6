@@ -44,3 +44,4 @@
 * Adding an Author Controller to the Project
 * Wiring up the ASP.NET Core App with the DbContext
 * Running the Controller to See the Output and Logs
+* Refactoring the Controller to Align with Common Practices

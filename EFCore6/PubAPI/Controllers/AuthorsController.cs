@@ -18,14 +18,20 @@ namespace PubAPI.Controllers
 
         // GET: api/Authors
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Author>>> GetAuthors()
+        public async Task<ActionResult<IEnumerable<AuthorDTO>>> GetAuthors()
         {
-            return await _context.Authors.Include(a=>a.Books).ToListAsync();
+            return await _context.Authors
+                .Select(a=>new AuthorDTO
+                {
+                    AuthorId= a.AuthorId,
+                    FirstName= a.FirstName,
+                    LastName= a.LastName
+                }).ToListAsync();
         }
 
         // GET: api/Authors/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Author>> GetAuthor(int id)
+        public async Task<ActionResult<AuthorDTO>> GetAuthor(int id)
         {
             var author = await _context.Authors.FindAsync(id);
 
@@ -34,9 +40,17 @@ namespace PubAPI.Controllers
                 return NotFound();
             }
 
-            return author;
+            return AuthorToDTO(author);
         }
-
+        private static AuthorDTO AuthorToDTO(Author author)
+        {
+            return new AuthorDTO
+            {
+                AuthorId = author.AuthorId,
+                FirstName = author.FirstName,
+                LastName = author.LastName
+            };
+        }
         // PUT: api/Authors/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
