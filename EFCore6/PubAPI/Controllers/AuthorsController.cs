@@ -20,7 +20,7 @@ namespace PubAPI.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Author>>> GetAuthors()
         {
-            return await _context.Authors.ToListAsync();
+            return await _context.Authors.Include(a=>a.Books).ToListAsync();
         }
 
         // GET: api/Authors/5
