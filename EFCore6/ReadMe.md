@@ -47,3 +47,5 @@
 * Refactoring the Controller to Align with Common Practices
 * Exploring and Debuging Insert, Update & Delete Controller Methods
 * Using Raw SQL for Controller Methods
+# Section 13: Testing with EF Core
+* Creating Your First Test and Using It Against the Database

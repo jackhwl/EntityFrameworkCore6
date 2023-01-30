@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using PublisherDomain;
 
 namespace PublisherData
@@ -21,12 +22,15 @@ namespace PublisherData
         }
 
         // remove after setup dbconnection in api
-        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        //{
-        //    optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb; Database=Publisher6;Trusted_Connection=True;")
-        //        .LogTo(Console.WriteLine, new[] {DbLoggerCategory.Database.Command.Name }, LogLevel.Information)
-        //        .EnableSensitiveDataLogging();
-        //}
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            if (!optionsBuilder.IsConfigured)
+            {
+                optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb; Database=Publisher6;Trusted_Connection=True;")
+                    .LogTo(Console.WriteLine, new[] { DbLoggerCategory.Database.Command.Name }, LogLevel.Information)
+                    .EnableSensitiveDataLogging();
+            }
+        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
