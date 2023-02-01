@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using PublisherConsole;
 using PublisherData;
 using PublisherDomain;
 
@@ -31,7 +32,9 @@ PubContext _context = new PubContext();
 
 //RawSqlStoredProc();
 //InterpolatedSqlStoredProc();
-GetAuthorsByArtist();
+//GetAuthorsByArtist();
+AddSomeAuthors();
+
 void GetAuthorsByArtist()
 {
     var authorartists = _context.AuthorsByArtist.ToList();
@@ -153,6 +156,21 @@ void AddSomeMoreAuthors()
     _context.Authors.Add(new Author { FirstName = "Jim", LastName = "Christopher" });
     _context.Authors.Add(new Author { FirstName = "Stephen", LastName = "Haunts" });
     _context.SaveChanges();
+}
+
+void AddSomeAuthors()
+{
+    var authorList = new List<ImportAuthorDTO>()
+    {
+        new ImportAuthorDTO("Ruth", "Ozeki"),
+        new ImportAuthorDTO("Sofia", "Segovia"),
+        new ImportAuthorDTO("Ursula K.", "LeGuin"),
+        new ImportAuthorDTO("Hugh", "Howey"),
+        new ImportAuthorDTO("Isabelle", "Allende"),
+    };
+
+    var dl = new DataLogic();
+    dl.ImportAuthors(authorList);
 }
 
 void SkipAndTakeAuthors()

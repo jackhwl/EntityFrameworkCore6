@@ -49,3 +49,5 @@
 * Using Raw SQL for Controller Methods
 # Section 13: Testing with EF Core
 * Creating Your First Test and Using It Against the Database
+* Using the InMemory Provider in Place of a Database Provider
+* Refactoring and Testing Some Console App Logic
