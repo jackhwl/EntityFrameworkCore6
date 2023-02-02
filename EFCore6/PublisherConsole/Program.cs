@@ -33,7 +33,30 @@ PubContext _context = new PubContext();
 //RawSqlStoredProc();
 //InterpolatedSqlStoredProc();
 //GetAuthorsByArtist();
-AddSomeAuthors();
+//AddSomeAuthors();
+CancelBookWithDefaultTransaction(8);
+
+void CancelBookWithDefaultTransaction(int bookid)
+{
+    using var transaction = _context.Database.BeginTransaction();
+    try
+    {
+        //get a list of artists working on book covers for this book
+        var artists = _context.Artists
+            .Where(a => a.Covers.Any(cover => cover.BookId == bookid)).ToList();
+        foreach(var artist in artists)
+        {
+            artist.Notes += Environment.NewLine + $"Asigned book {bookid } was cancelled on { DateTime.Today.Date } ";
+        }
+        _context.Database.ExecuteSqlInterpolated($"Delete from books where bookid = {bookid}");
+        _context.SaveChanges();
+        transaction.Commit();
+    }
+    catch (Exception)
+    {
+
+    }
+}
 
 void GetAuthorsByArtist()
 {

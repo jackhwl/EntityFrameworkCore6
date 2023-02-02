@@ -55,3 +55,5 @@
 * Refactoring and Testing Some Console App Logic
 * Testing EF Core in an ASP.NET Core App
 # Section 14: Adding Some More Practical Mappings to Your Application
+# Section 15: Understanding EF Core’s Database Connectivity
+* EF Core's Transaction Support and Concurrency Handling
