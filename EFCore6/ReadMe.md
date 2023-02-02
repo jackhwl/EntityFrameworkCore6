@@ -54,3 +54,4 @@
 * Using the InMemory Provider in Place of a Database Provider
 * Refactoring and Testing Some Console App Logic
 * Testing EF Core in an ASP.NET Core App
+# Section 14: Adding Some More Practical Mappings to Your Application
