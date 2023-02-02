@@ -57,3 +57,4 @@
 # Section 14: Adding Some More Practical Mappings to Your Application
 # Section 15: Understanding EF Core’s Database Connectivity
 * EF Core's Transaction Support and Concurrency Handling
+# Section 16: Tapping into EF Core’s Pipeline
