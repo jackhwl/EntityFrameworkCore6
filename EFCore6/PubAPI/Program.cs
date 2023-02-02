@@ -14,6 +14,7 @@ builder.Services.AddDbContext<PublisherData.PubContext>(
     opt => opt.UseSqlServer(builder.Configuration.GetConnectionString("PubConnection"))
     .EnableSensitiveDataLogging()
     .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking));
+builder.Services.AddScoped<PubAPI.DataLogic>();
 
 var app = builder.Build();
 

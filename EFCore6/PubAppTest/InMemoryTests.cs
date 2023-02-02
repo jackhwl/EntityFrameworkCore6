@@ -2,7 +2,6 @@ using Microsoft.EntityFrameworkCore;
 using PublisherConsole;
 using PublisherData;
 using PublisherDomain;
-using System.Diagnostics;
 
 namespace PubAppTest
 {
@@ -39,6 +38,34 @@ namespace PubAppTest
             var dl = new DataLogic(new PubContext(builder.Options));
             var result = dl.ImportAuthors(authorList);
             Assert.AreEqual(authorList.Count, result);
+        }
+
+        [TestMethod]
+        public void CanGetAnAuthorById()
+        {
+            //Arrange (set up builder & seed data)
+            var builder = new DbContextOptionsBuilder<PubContext>();
+            builder.UseInMemoryDatabase("CanGetAnAuthorById");
+            int seededId = SeedOneAuthor(builder.Options);
+            //Act (call the method)
+            using (var context = new PubContext(builder.Options))
+            {
+                var bizlogic = new PubAPI.DataLogic(context);
+                var authorRetrieved = bizlogic.GetAuthorById(seededId);
+                //Assert (check the results)
+                Assert.AreEqual(seededId, authorRetrieved.Result.AuthorId);
+            }
+        }
+
+        private int SeedOneAuthor(DbContextOptions<PubContext> options)
+        {
+            using (var seedcontext = new PubContext(options))
+            {
+                var author = new Author { FirstName = "a", LastName= "b" };
+                seedcontext.Authors.Add(author);
+                seedcontext.SaveChanges();
+                return author.AuthorId;
+            }
         }
     }
 }

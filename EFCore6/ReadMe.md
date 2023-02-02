@@ -31,7 +31,9 @@
 * Understanding and Creating Skip Navigations
 * Joining Objects in New Many-to-Many Relationships
 * Querying Across Many-to-Many Relationships
-# Section 10: Defining and Using One-to-One Relationships
+# Section 10: Defining and Using One-to-One 
+
+
 * Updating the Model and Database with the New Relationship
 # Section 11: Working with Views and Stored Procedures and Raw SQL
 * Querying with Raw SQL
@@ -51,3 +53,4 @@
 * Creating Your First Test and Using It Against the Database
 * Using the InMemory Provider in Place of a Database Provider
 * Refactoring and Testing Some Console App Logic
+* Testing EF Core in an ASP.NET Core App

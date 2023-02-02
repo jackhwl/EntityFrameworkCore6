@@ -10,38 +10,55 @@ namespace PubAPI.Controllers
     public class AuthorsController : ControllerBase
     {
         private readonly PubContext _context;
+        private readonly DataLogic _dl;
 
         public AuthorsController(PubContext context)
         {
             _context = context;
         }
 
+        public AuthorsController(DataLogic dl)
+        {
+            _dl = dl;
+        }
+
         // GET: api/Authors
         [HttpGet]
         public async Task<ActionResult<IEnumerable<AuthorDTO>>> GetAuthors()
         {
-            return await _context.Authors
-                .Select(a=>new AuthorDTO
-                {
-                    AuthorId= a.AuthorId,
-                    FirstName= a.FirstName,
-                    LastName= a.LastName
-                }).ToListAsync();
+            var authorDTOList = await _dl.GetAllAuthors();
+            return authorDTOList;
+
+            //return await _context.Authors
+            //    .Select(a=>new AuthorDTO
+            //    {
+            //        AuthorId= a.AuthorId,
+            //        FirstName= a.FirstName,
+            //        LastName= a.LastName
+            //    }).ToListAsync();
         }
 
         // GET: api/Authors/5
         [HttpGet("{id}")]
         public async Task<ActionResult<AuthorDTO>> GetAuthor(int id)
         {
-            var author = await _context.Authors.FindAsync(id);
-
-            if (author == null)
+            var authorDTO = await _dl.GetAuthorById(id);
+            if (authorDTO == null)
             {
                 return NotFound();
             }
+            return authorDTO;
 
-            return AuthorToDTO(author);
+            //var author = await _context.Authors.FindAsync(id);
+
+            //if (author == null)
+            //{
+            //    return NotFound();
+            //}
+
+            //return AuthorToDTO(author);
         }
+
         [HttpPost]
         public async Task<ActionResult<AuthorDTO>> PostAuthor(AuthorDTO authorDTO)
         {
