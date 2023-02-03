@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GloboTicket.Infrastructure"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GloboTicket.API", "GloboTicket.API\GloboTicket.API.csproj", "{7433482F-18A2-4199-AAEE-A83D479CC36C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GloboTicket.SharedKernel", "GloboTicket.SharedKernel\GloboTicket.SharedKernel.csproj", "{FCDDCAC8-4DE5-4EDA-AB59-02298AA7BC04}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{7433482F-18A2-4199-AAEE-A83D479CC36C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7433482F-18A2-4199-AAEE-A83D479CC36C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7433482F-18A2-4199-AAEE-A83D479CC36C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCDDCAC8-4DE5-4EDA-AB59-02298AA7BC04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCDDCAC8-4DE5-4EDA-AB59-02298AA7BC04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCDDCAC8-4DE5-4EDA-AB59-02298AA7BC04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCDDCAC8-4DE5-4EDA-AB59-02298AA7BC04}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

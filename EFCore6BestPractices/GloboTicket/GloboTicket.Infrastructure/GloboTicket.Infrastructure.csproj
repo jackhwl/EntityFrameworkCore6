@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\GloboTicket.Domain\GloboTicket.Domain.csproj" />
+    <ProjectReference Include="..\GloboTicket.SharedKernel\GloboTicket.SharedKernel.csproj" />
   </ItemGroup>
 
 </Project>

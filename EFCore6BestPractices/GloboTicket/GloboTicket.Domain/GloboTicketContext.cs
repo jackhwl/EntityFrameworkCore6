@@ -1,11 +1,14 @@
 ﻿using GloboTicket.Domain.Entities;
+using GloboTicket.SharedKernel.Configuration;
 using Microsoft.EntityFrameworkCore;
 
 namespace GloboTicket.Domain;
 public class GloboTicketContext : DbContext
 {
-	public GloboTicketContext(DbContextOptions<GloboTicketContext> options) : base(options)
+	private IModelConfiguration modelConfiguration;
+	public GloboTicketContext(DbContextOptions<GloboTicketContext> options, IModelConfiguration modelConfiguration) : base(options)
 	{
+		this.modelConfiguration = modelConfiguration;
 	}
 
 	public DbSet<Venue> Venue { get; set; }
@@ -13,5 +16,6 @@ public class GloboTicketContext : DbContext
 	protected override void OnModelCreating(ModelBuilder modelBuilder)
 	{
 		modelBuilder.ApplyConfigurationsFromAssembly(typeof(GloboTicketContext).Assembly);
+		modelConfiguration.ConfigureModel(modelBuilder);
 	}
 }
