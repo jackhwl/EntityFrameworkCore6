@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GloboTicket.Domain", "GloboTicket.Domain\GloboTicket.Domain.csproj", "{F2166E88-BD08-46AD-846E-CBD444A1D3F8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F2166E88-BD08-46AD-846E-CBD444A1D3F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2166E88-BD08-46AD-846E-CBD444A1D3F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2166E88-BD08-46AD-846E-CBD444A1D3F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2166E88-BD08-46AD-846E-CBD444A1D3F8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {12D5E5D5-635D-4A94-AB1A-901DD7DA8A33}
+	EndGlobalSection
+EndGlobal
