@@ -12,8 +12,10 @@ public class GloboTicketContext : DbContext
 	}
 
 	public DbSet<Venue> Venue { get; set; }
+    public DbSet<Act> Act { get; set; }
+    public DbSet<Show> Show { get; set; }
 
-	protected override void OnModelCreating(ModelBuilder modelBuilder)
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
 	{
 		modelBuilder.ApplyConfigurationsFromAssembly(typeof(GloboTicketContext).Assembly);
 		modelConfiguration.ConfigureModel(modelBuilder);
