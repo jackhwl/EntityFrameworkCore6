@@ -9,3 +9,11 @@
 * * [System.Environment]::SetEnvironmentVariable('GLOBOTICKET_ADMIN_CONNECTION_STRING','Data Source=(localdb)\mssqllocaldb; Initial Catalog=Globoticket;Trusted_Connection=True;')
 * * dotnet ef migrations add AddedVenueActAndShow -p .\GloboTicket.Infrastructure -s .\GloboTicket.API
 * * dotnet ef database update -p .\GloboTicket.Infrastructure -s .\GloboTicket.API
+* Roles Define Application Privilegs
+* * dotnet ef migrations add CreateAppRole -p .\GloboTicket.Infrastructure -s .\GloboTicket.API
+* * dotnet ef database update -p .\GloboTicket.Infrastructure -s .\GloboTicket.API
+* **  create login app with password='viGlob@l3.1415926'
+
+* **  use globoticket
+* **  create user app for login app
+* **  alter role globoticket_app add member app
