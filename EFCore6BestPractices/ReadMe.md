@@ -17,3 +17,5 @@
 * **  use globoticket
 * **  create user app for login app
 * **  alter role globoticket_app add member app
+* Shift Left
+* User Secrets Store Developer Credentials
