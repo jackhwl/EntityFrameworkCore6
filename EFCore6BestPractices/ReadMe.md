@@ -19,3 +19,7 @@
 * **  alter role globoticket_app add member app
 * Shift Left
 * User Secrets Store Developer Credentials
+## Section 4: Automating Schema Evolution with Migration Bundles and Docker
+* Migration Bundles Encapsulate Schema Evolution
+* * -p: migrations project; -s: startup project
+* * dotnet ef migrations bundle -p .\GloboTicket.Infrastructure -s .\GloboTicket.API
