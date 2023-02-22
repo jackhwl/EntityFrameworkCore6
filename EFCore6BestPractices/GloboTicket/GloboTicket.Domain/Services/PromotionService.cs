@@ -18,10 +18,9 @@ public class PromotionService
 
     public async Task<Show> BookShow(Venue venue, Act act, DateTimeOffset date)
     {
-        var show = new Show
+        var show = new Show(venue, act)
         {
-            Venue = venue,
-            Act = act,
+            //ShowGuid = s
             Date = date
         };
 
