@@ -23,3 +23,13 @@
 * Migration Bundles Encapsulate Schema Evolution
 * * -p: migrations project; -s: startup project
 * * dotnet ef migrations bundle -p .\GloboTicket.Infrastructure -s .\GloboTicket.API
+* docker build -t globoticket/integration-test:latest -f IntegrationTest/IntegrationTest.Dockerfile .
+* docker run -it --rm --entrypoint /bin/bash globoticket/integration-test:latest
+*$ dotnet ef migrations bundle -p ./GloboTicket.Infrastructure -s ./GloboTicket.API --configuration  Release --no-build
+*$ dotnet tool install --global dotnet-ef
+*$ export PATH="$PATH:/root/.dotnet/tools"
+*$ export GLOBOTICKET_ADMIN_CONNECTION_STRING="sERVER=tcp:mssql;Database=GloboTicket;User=sa;Password=notused;TrustServerCertificate=True;"
+** docker compose -f IntegrationTest\docker-compose.yaml up --exit-code-from test --renew-anon-volumes
+
+## Section 5: Building Safer Code by Controlling Nullability
+* Declare Optional Columns as Nullable Types
