@@ -38,3 +38,4 @@
 ## Section 6: Identifying and Resolving Performance Issues
 * dotnet ef dbcontext optimize -p ./GloboTicket.Infrastructure -s ./GloboTicket.API
 * Compile Models for Faster Startup
+## Section 7: Delivering Large Result Sets with Asynchronous Streams
