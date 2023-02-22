@@ -11,7 +11,7 @@ if (builder.Environment.IsDevelopment())
 
 // Add services to the container.
 string connectionString = builder.Configuration.GetConnectionString("GloboTicketConnection");
-builder.Services.AddInfrastructure(connectionString);
+builder.Services.AddInfrastructure(connectionString, builder.Environment.IsDevelopment());
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

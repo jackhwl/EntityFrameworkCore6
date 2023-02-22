@@ -1,14 +1,21 @@
 ﻿using GloboTicket.Domain;
 using GloboTicket.Infrastructure.Configuration;
+using GloboTicket.Infrastructure.GloboTicket.Domain.CompiledModels;
 using GloboTicket.SharedKernel.Configuration;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
 
 namespace GloboTicket.Infrastructure;
 public static class ServiceRegistration
 {
-    public static IServiceCollection AddInfrastructure(this IServiceCollection services, string connectionString)
+    public static IServiceCollection AddInfrastructure(this IServiceCollection services, string connectionString, bool isDevelopment)
     {
+        if (string.IsNullOrEmpty(connectionString))
+        {
+            throw new ArgumentException("Connection string cannot be null");
+        }
+
         services.AddSingleton<IModelConfiguration, SqlModelConfiguration>();
         services.AddDbContext<GloboTicketContext>(options =>
         {
@@ -16,7 +23,16 @@ public static class ServiceRegistration
             {
                 sqlOptions.MigrationsAssembly(typeof(ServiceRegistration).Assembly.FullName);
             });
+            if (isDevelopment)
+            {
+                options.EnableSensitiveDataLogging();
+            } else
+            {
+                options.UseModel(GloboTicketContextModel.Instance);
+            }
         });
+
+        //services.AddDomain();
 
         return services;
     }

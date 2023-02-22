@@ -35,3 +35,6 @@
 * Declare Optional Columns as Nullable Types
 * Declare Constructors for Navigation Properties
 * Declare Non-Nullable DbSets
+## Section 6: Identifying and Resolving Performance Issues
+* dotnet ef dbcontext optimize -p ./GloboTicket.Infrastructure -s ./GloboTicket.API
+* Compile Models for Faster Startup
