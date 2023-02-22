@@ -11,9 +11,9 @@ public class GloboTicketContext : DbContext
 		this.modelConfiguration = modelConfiguration;
 	}
 
-	public DbSet<Venue> Venue { get; set; }
-    public DbSet<Act> Act { get; set; }
-    public DbSet<Show> Show { get; set; }
+	//public DbSet<Venue> Venue => Set<Venue>();
+ //   public DbSet<Act> Act => Set<Act>();
+ //   public DbSet<Show> Show	=> Set<Show>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
 	{

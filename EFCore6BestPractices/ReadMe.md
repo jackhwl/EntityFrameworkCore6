@@ -34,3 +34,4 @@
 ## Section 5: Building Safer Code by Controlling Nullability
 * Declare Optional Columns as Nullable Types
 * Declare Constructors for Navigation Properties
+* Declare Non-Nullable DbSets
